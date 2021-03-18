@@ -1,24 +1,29 @@
-
 /**
  * Write a description of class Recruiter here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Helmi Arrazy
+ * @version 18-03-2021
  */
 public class Recruiter
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private String name;
     private String email;
     private String phoneNumber;
+    private Location location;
 
     /**
-     * Constructor for objects of class Recruiter
+     * Constructor untuk objects dari class Recruiter
      */
-    public Recruiter()
+    public Recruiter(int id, String name, String email, String phoneNumber, 
+    Location location)
     {
-    
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
 
     /**
@@ -27,44 +32,47 @@ public class Recruiter
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static int getId()
+    public int getId()
     {
-        return 0;
+        return this.id;
     }
-    
-    public static String getName()
+    public String getName()
     {
-        return "oop";
-    }
-    
-    public static String getEmail()
+        return this.name;
+    }   
+    public String getEmail()
     {
-        return "oop";
+        return this.email;
     }
-    
-    public static String getPhoneNumber()
+    public String getPhoneNumber()
     {
-        return "oop";
+        return this.phoneNumber;
     }
-    
-    public static void setId(int id)
+    public Location getLocation()
     {
-        
+        return this.location;
     }
-    
-    public static void setEmail(String email)
+    public void setId(int id)
     {
-        
+        this.id = id;
     }
-    
-    public static void setName(String name)
+    public void setEmail(String email)
     {
-        
+        this.email = email;
     }
-    
-    public static void setPhoneNumber(String phoneNumber)
+    public void setName(String name)
     {
-    
+        this.name = name;
     }
-    
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+    public void setLocation(Location location)
+    {
+        this.location = location;
+    }
+    public void printData() {
+        System.out.println(getName());
+    }
 }

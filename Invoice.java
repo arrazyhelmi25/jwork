@@ -1,24 +1,29 @@
-
 /**
  * Write a description of class Invoice here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Helmi Arrazy
+ * @version 18-03-2021
  */
 public class Invoice
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private int idJob;
     private String date;
     private int totalFee;
+    private Jobseeker jobseeker;
 
     /**
-     * Constructor for objects of class Invoice
+     * Constructor untuk objects dari class Invoice
      */
-    public Invoice()
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker 
+    jobseeker)
     {
-    
+        this.id = id;
+        this.idJob = idJob;
+        this.date = date;
+        this.totalFee = totalFee;
+        this.jobseeker = jobseeker;
     }
 
     /**
@@ -27,40 +32,46 @@ public class Invoice
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static int getId()
-    {
-        return 0;
+    public int getId(){
+        return this.id;
     }
     
-    public static int getIdJob()
-    {
-        return 0;
+    public int getIdJob(){
+        return this.idJob;
     }
     
-    public static String getDate()
-    {
-        return "oop";
+    public String getDate(){
+        return this.date;
     }
     
-    public static int getTotalFee()
-    {
-        return 0;
+    public int getTotalFee(){
+        return this.totalFee;
     }
     
-    public static void setId(int id){
-        
+    public Jobseeker getJobseeker(){
+        return this.jobseeker;
     }
     
-    public static void setIdJobs(int idJobs)
-    {
-        
+    public void setId(int id){
+        this.id = id;
     }
     
-    public static String setDate(String date){
-        return "";
+    public void setIdJobs(int idJobs){
+        this.idJob = idJob;
     }
     
-    public static String setTotalFee(String totalFee){
-        return "";
+    public void setDate(String date){
+        this.date = date;
+    }
+    
+    public void setTotalFee(int totalFee){
+        this.totalFee = totalFee;
+    }
+    
+    public void setJobseeker(Jobseeker jobseeker){
+        this.jobseeker = jobseeker;
+    }
+    
+    public void printData(){
     }
 }

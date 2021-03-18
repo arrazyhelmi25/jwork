@@ -2,22 +2,28 @@
 /**
  * Write a description of class Job here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Helmi Arrazy
+ * @version 18-03-2021
  */
 public class Job
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private String name;
     private int fee;
     private String category;
-
+    private Recruiter recruiter;
+    
     /**
-     * Constructor for objects of class Job
+     * Constructor untuk objects dari class Job
      */
-    public Job()
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
+        this.id = id;
+        this.recruiter = recruiter;
+        this.name = name;
+        this.fee = fee;
+        this.category = category;
         // initialise instance variables
     }
 
@@ -27,45 +33,49 @@ public class Job
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static int getId()
+    public int getId()
     {
-        return 0;
+        return this.id;
     }
-    
-    public static String getName()
+    public String getName()
     {
-        return "oop";
+        return this.name;
     }
-    
-    public static int getFee()
+    public int getFee()
     {
-        return 0;
+        return this.fee;
     }
-    
-    public static String getCategory()
+    public String getCategory()
     {
-        return "oop";
+        return this.category;
     }
-    
-    public static void setId(int id)
+    public Recruiter getRecruiter()
     {
-       
+        return this.recruiter;
     }
-    
-    public static void setName(String name)
+    public void setId(int id)
     {
-       
+       this.id = id;
     }
-    
-    public static void setFee(int fee)
+    public void setName(String name)
     {
-       
+       this.name = name;
     }
-    
-    public static void setCategory(String category)
+    public void setRecruiter(Recruiter recruiter)
+    {
+       this.recruiter = recruiter;
+    }
+    public void setFee(int fee)
+    {
+        this.fee = fee;
+    }
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+    public void printData()
     {
         
     }
-    
     
 }

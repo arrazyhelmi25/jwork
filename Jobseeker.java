@@ -1,13 +1,12 @@
-
 /**
  * Write a description of class Jobseeker here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Helmi Arrazy
+ * @version 18-03-2021
  */
 public class Jobseeker
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private String name;
     private String email;
@@ -15,11 +14,16 @@ public class Jobseeker
     private String joinDate;
 
     /**
-     * Constructor for objects of class Jobseeker
+     * Constructor untuk objects dari class Jobseeker
      */
-    public Jobseeker()
+    public Jobseeker(int id, String name, String email, String password, 
+    String joinDate)
     {
-        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
     /**
@@ -28,46 +32,48 @@ public class Jobseeker
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static int getId()
+    public int getId()
     {
-        return 0;
+        return this.id;
     }
-    public static String getName()
+    public String getName()
     {
-        return "oop";
+        return this.name;
     }
-    public static String getEmail()
+    public String getEmail()
     {
-        return "oop";
+        return this.email;
     }
-    public static String getPassword()
+    public String getPassword()
     {
-        return "oop";
+        return this.password;
     }
-     public static String joinDate()
+    public String getJoinDate()
     {
-        return "oop";
+        return this.joinDate;
     }
-    public static void setId(int id)
+    public void setId(int id)
     {
-        
+        this.id = id;
     }
-    public static void setName(String Name)
+    public void setName(String Name)
     {
-        
+        this.name = name;
     }
-    public static void setEmail(String email)
+    public void setEmail(String email)
     {
-        
+        this.email = email;
     }
-    public static void setPassword(String password)
+    public void setPassword(String password)
     {
-        
+        this.password = password;
     }
-    public static void setJoinDate(String joinDate)
+    public void setJoinDate(String joinDate)
     {
-        
+        this.joinDate = joinDate;
+    }
+    public void printData()
+    {
+        System.out.println(getName());
     }
 }
-
-
