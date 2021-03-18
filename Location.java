@@ -1,5 +1,5 @@
 /**
- * Write a description of class Location here.
+ * Kelas Location
  *
  * @author Helmi Arrazy
  * @version 18-03-2021

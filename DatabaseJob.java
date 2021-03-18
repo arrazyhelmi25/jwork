@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class DatabaseJob here.
+ * Kelas DatabaseJob
  *
  * @author Helmi Arrazy
  * @version 18-03-2021
@@ -20,26 +20,46 @@ public class DatabaseJob
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method Boolean untuk addJob
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param Job
+     * 
      */
     public boolean addJob(Job job)
     {
         return false;
     }
     
+    
+    /**
+     * Method Boolean (aksesor) untuk removeJob
+     *
+     * @param Job
+     * 
+     */
     public boolean removeJob(Job job)
     {
         return false;
     }
     
+    
+    /**
+     * Method setter untuk mendapatkan job
+     *
+     * 
+     * 
+     */
     public Job getJob()
     {
         return null;
     }
     
+    /**
+     * Method  untuk mendapatkan listjob
+     *
+     *
+     * 
+     */
     public String [] getListJob ()
     {
         return null;

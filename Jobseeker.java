@@ -1,5 +1,5 @@
 /**
- * Write a description of class Jobseeker here.
+ * Kelas Jobseeker
  *
  * @author Helmi Arrazy
  * @version 18-03-2021

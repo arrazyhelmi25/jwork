@@ -1,5 +1,5 @@
 /**
- * Write a description of class Recruiter here.
+ * Kelas Recruiter
  *
  * @author Helmi Arrazy
  * @version 18-03-2021

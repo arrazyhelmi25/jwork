@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Job here.
+ * Kelas Job
  *
  * @author Helmi Arrazy
  * @version 18-03-2021
