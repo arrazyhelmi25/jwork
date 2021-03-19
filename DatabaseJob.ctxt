@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=DatabaseJob
-comment0.text=\r\n\ Kelas\ DatabaseJob\r\n\r\n\ @author\ Helmi\ Arrazy\r\n\ @version\ 18-03-2021\r\n
+comment0.text=\r\n\ Kelas\ DatabaseJob\r\n\ Sesuai\ dengan\ nama\ kelasnya,\ sepertinya\ akan\ digunakan\ untuk\ mengatur\ segala\ data\ terkait\ suatu\ pekerjaan,\ atau\ database\ pekerjaan.\r\n\ Didalam\ kelas\ ini\ juga\ ada\ beberapa\ access\ modifier\ (public\ dan\ private)\ yang\ digunakan\ pada\ variable,\ method,\ atau\ constructor.\r\n\ Access\ Modifier\ bersifat\ public\ berarti\ dapat\ diakses\ oleh\ kelas\ dari\ mana\ saja\ termasuk\ subclass.\r\n\ Access\ Modifier\ bersifat\ private\ berarti\ hanya\ dapat\ diakses\ didalam\ kelas\ itu\ sendiri\ saja.\r\n\ \r\n\ @author\ Helmi\ Arrazy\r\n\ @version\ 18-03-2021\r\n
 comment1.params=
 comment1.target=DatabaseJob()
-comment1.text=\r\n\ Constructor\ untuk\ objects\ dari\ class\ DatabaseJob\r\n
+comment1.text=\r\n\ Sebuah\ constructor\ default\ yang\ bernama\ DatabaseJob.\r\n\ Access\ modifier\ dari\ constructor\ bertipe\ public.\r\n\ \r\n
 comment2.params=job
 comment2.target=boolean\ addJob(Job)
-comment2.text=\r\n\ Method\ Boolean\ untuk\ addJob\r\n\r\n\ @param\ Job\r\n\ \r\n
+comment2.text=\r\n\ Sebuah\ method\ yang\ bernama\ addJob,\ sepertinya\ method\ ini\ digunakan\ untuk\ menambahkan\ data\ job.\r\n\ Access\ Modifier\ method\ berjenis\ public.\r\n\ Return\ type\ dari\ method\ bertipe\ boolean.\r\n\ Ada\ parameter\ yang\ digunakan\ pada\ method,\ yaitu\ job.\r\n\ \r\n\ @param\ job\ digunakan\ sebagai\ inputan\ untuk\ method\ ini\r\n\ @return\ false\ jenis\ nilai\ yang\ dikembalikkan\ berupa\ tipe\ data\ boolean\ yaitu\ 'false'\r\n\ \r\n
 comment3.params=job
 comment3.target=boolean\ removeJob(Job)
-comment3.text=\r\n\ Method\ Boolean\ (aksesor)\ untuk\ removeJob\r\n\r\n\ @param\ Job\r\n\ \r\n
+comment3.text=\r\n\ Sebuah\ method\ yang\ bernama\ removeJob,\ sepertinya\ method\ ini\ digunakan\ untuk\ membuang\ data\ job.\r\n\ Access\ Modifier\ method\ berjenis\ public.\r\n\ Return\ type\ dari\ method\ bertipe\ boolean.\r\n\ Ada\ parameter\ yang\ digunakan\ pada\ method,\ yaitu\ job.\r\n\ \r\n\ @param\ job\ digunakan\ sebagai\ inputan\ untuk\ method\ ini\r\n\ @return\ false\ jenis\ nilai\ yang\ dikembalikkan\ berupa\ tipe\ data\ boolean\ yaitu\ 'false'\r\n\ \r\n
 comment4.params=
 comment4.target=Job\ getJob()
-comment4.text=\r\n\ Method\ setter\ untuk\ mendapatkan\ job\r\n\r\n\ \r\n\ \r\n
+comment4.text=\r\n\ Sebuah\ method\ yang\ bernama\ getJob,\ sepertinya\ method\ ini\ digunakan\ untuk\ mendapatkan\ job.\r\n\ Access\ Modifier\ method\ berjenis\ public.\r\n\ Return\ type\ dari\ method\ berjenis\ Job\ (sepertinya\ object\ atau\ kelas).\r\n\ Tidak\ ada\ parameter\ yang\ digunakan\ pada\ method\ ini.\r\n\ \r\n\ @return\ null\ artinya\ tidak\ ada\ data\ (null)\ yang\ dikembalikkan\r\n\ \r\n
 comment5.params=
 comment5.target=java.lang.String[]\ getListJob()
-comment5.text=\r\n\ Method\ \ untuk\ mendapatkan\ listjob\r\n\r\n\r\n\ \r\n
+comment5.text=\r\n\ Sebuah\ method\ yang\ bernama\ getListJob,\ sepertinya\ method\ ini\ digunakan\ untuk\ mendapatkan\ daftar\ dari\ data\ job.\r\n\ Access\ Modifier\ method\ berjenis\ public.\r\n\ Return\ type\ dari\ method\ bertipe\ String\ array.\r\n\ Tidak\ ada\ parameter\ yang\ digunakan\ pada\ method\ ini.\r\n\ \r\n\ \r\n\ @return\ null\ artinya\ tidak\ ada\ data\ (null)\ yang\ dikembalikkan\r\n\ \r\n
 numComments=6
