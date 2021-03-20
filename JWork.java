@@ -24,6 +24,6 @@ public class JWork
         System.out.println (recruiter2.getName());
         recruiter2.setName("Harry");
         System.out.println (recruiter2.getName());
-        System.out.println (job2.getName());
+        job2.printData();
     }
 }
