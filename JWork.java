@@ -22,7 +22,8 @@ public class JWork
         Invoice invoice2 = new Invoice(298, 300, "19 November 2021", 2000, jobseeker2);
         
         System.out.println (recruiter2.getName());
-        System.out.println (recruiter2.setName("Harry"));
-        System.out.println (job2.prindData());
+        recruiter2.setName("Harry");
+        System.out.println (recruiter2.getName());
+        System.out.println (job2.getName());
     }
 }
