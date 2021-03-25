@@ -51,13 +51,13 @@ public class DatabaseJobSeeker
     /**
      * Sebuah method yang bernama getJobSeeker, sepertinya method ini digunakan untuk mendapatkan data jobseeker.
      * Access Modifier method berjenis public.
-     * Return type dari method berjenis Job (sepertinya object atau kelas).
+     * Return type dari method berjenis Jobseeker (sepertinya object atau kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * 
      * @return null artinya tidak ada data (null) yang dikembalikkan
      * 
      */
-    public static Job getJobSeeker()
+    public static Jobseeker getJobSeeker()
     {
         return null;
     }
