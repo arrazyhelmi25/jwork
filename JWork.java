@@ -25,5 +25,11 @@ public class JWork
         recruiter2.setName("Harry");
         System.out.println (recruiter2.getName());
         job2.printData();
+        
+        //Soal Bonus
+        DatabaseRecruiter.addRecruiter(recruiter2);
+        DatabaseJob.addJob(job2);
+        
+    
     }
 }

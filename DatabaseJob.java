@@ -29,6 +29,7 @@ public class DatabaseJob
     /**
      * Sebuah method yang bernama addJob, sepertinya method ini digunakan untuk menambahkan data job.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe boolean.
      * Ada parameter yang digunakan pada method, yaitu job.
      * 
@@ -36,7 +37,7 @@ public class DatabaseJob
      * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
      * 
      */
-    public boolean addJob(Job job)
+    public static boolean addJob(Job job)
     {
         return false;
     }
