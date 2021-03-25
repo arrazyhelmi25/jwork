@@ -12,6 +12,7 @@ public class DatabaseJobseeker
 {
     // Deklarasi instance variables yang digunakan.
     // Access Modifier variable di set private.
+    //
     private static String [] listJobseeker;
     
     
