@@ -1,55 +1,55 @@
 /**
- * Kelas DatabaseJob
- * Sesuai dengan nama kelasnya, sepertinya akan digunakan untuk mengatur segala data terkait suatu pekerjaan, atau database pekerjaan.
+ * Kelas DatabaseJobSeeker
+ * Sesuai dengan nama kelasnya, sepertinya akan digunakan untuk mengatur segala data terkait suatu database pencari pekerjaan.
  * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
  * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
  * Access Modifier bersifat private berarti hanya dapat diakses didalam kelas itu sendiri saja.
  * 
  * @author Helmi Arrazy
- * @version 18-03-2021
+ * @version 25-03-2021
  */
-public class DatabaseJob
+public class DatabaseJobSeeker
 {
     // Deklarasi instance variables yang digunakan.
     // Access Modifier variable di set private.
-    private static String [] listJob;
-
-
+    private static String [] listJobSeeker;
+    
+    
     /**
-     * Sebuah method yang bernama addJob, sepertinya method ini digunakan untuk menambahkan data job.
+     * Sebuah method yang bernama addJobSeeker, sepertinya method ini digunakan untuk menambahkan data jobseeker.
      * Access Modifier method berjenis public.
      * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe boolean.
-     * Ada parameter yang digunakan pada method, yaitu job.
+     * Ada parameter yang digunakan pada method, yaitu jobseeker.
      * 
-     * @param job digunakan sebagai inputan untuk method ini
+     * @param jobseeker digunakan sebagai inputan untuk method ini
      * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
      * 
      */
-    public static boolean addJob(Job job)
+    public static boolean addJobSeeker(Jobseeker jobseeker)
     {
         return false;
     }
     
     
     /**
-     * Sebuah method yang bernama removeJob, sepertinya method ini digunakan untuk membuang data job.
+     * Sebuah method yang bernama removeJobSeeker, sepertinya method ini digunakan untuk membuang data jobseeker.
      * Access Modifier method berjenis public.
      * Return type dari method bertipe boolean.
-     * Ada parameter yang digunakan pada method, yaitu job.
+     * Ada parameter yang digunakan pada method, yaitu jobseeker.
      * 
-     * @param job digunakan sebagai inputan untuk method ini
+     * @param jobseeker digunakan sebagai inputan untuk method ini
      * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
      * 
      */
-    public static boolean removeJob(Job job)
+    public static boolean removeJobSeeker(Jobseeker jobseeker)
     {
         return false;
     }
     
     
     /**
-     * Sebuah method yang bernama getJob, sepertinya method ini digunakan untuk mendapatkan job.
+     * Sebuah method yang bernama getJobSeeker, sepertinya method ini digunakan untuk mendapatkan data jobseeker.
      * Access Modifier method berjenis public.
      * Return type dari method berjenis Job (sepertinya object atau kelas).
      * Tidak ada parameter yang digunakan pada method ini.
@@ -57,24 +57,23 @@ public class DatabaseJob
      * @return null artinya tidak ada data (null) yang dikembalikkan
      * 
      */
-    
-    public static Job getJob()
+    public static Job getJobSeeker()
     {
         return null;
     }
     
     /**
-     * Sebuah method yang bernama getListJob, sepertinya method ini digunakan untuk mendapatkan daftar dari data job.
+     * Sebuah method yang bernama getListJobSeeker, sepertinya method ini digunakan untuk mendapatkan daftar dari data jobseeker.
      * Access Modifier method berjenis public.
      * Return type dari method bertipe String array.
      * Tidak ada parameter yang digunakan pada method ini.
      * 
      * 
-     * @return null artinya tidak ada data (null) yang dikembalikkan
+     * @return listJobSeeker jadi mengembalikkan nilai/data yang ada didalam variable listJobSeeker
      * 
      */
-    public static String [] getListJob ()
+    public static String [] getListJobSeeker()
     {
-        return null;
+        return listJobSeeker;
     }
 }

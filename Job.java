@@ -15,9 +15,9 @@ public class Job
     // Access Modifier variable di set private.
     private int id;
     private String name;
-    private int fee;
-    private String category;
     private Recruiter recruiter;
+    private int fee;
+    private JobCategory category;
     
     /**
      * Sebuah Constructor default yang bernama Job.
@@ -31,7 +31,7 @@ public class Job
      * @param category merupakan nilai inputan untuk variable category
      * @param recruiter merupakan nilai inputan untuk variable recruiter
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
          * yaitu variable instance pada class Job yang ada diatas. 
@@ -86,14 +86,14 @@ public class Job
     }
     
     /**
-     * Sebuah method getter (accessor) yang bernama getCategory untuk mendapatkan/mengembalikkan data category.
-     * Return type dari method ini adalah String.
+     * Sebuah method getter (accessor) yang bernama JobCategory untuk mendapatkan/mengembalikkan data category.
+     * Return type dari method ini adalah JobCategory (Objek atau Class).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
      * @return category jadi mengembalikkan nilai yang ada didalam variable category
      */
-    public String getCategory()
+    public JobCategory getCategory()
     {
         return category;
     }
@@ -176,7 +176,7 @@ public class Job
      * 
      * @param category digunakan sebagai inputan untuk variable category
      */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
@@ -189,7 +189,14 @@ public class Job
      */
     public void printData()
     {
-        System.out.println(getName());
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID: " + getId());
+        System.out.println("Name: " + getName());
+        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("Fee: " + getFee());
+        System.out.println("Category: "+ getCategory());
+        
+        
     }
     
 }

@@ -12,17 +12,8 @@ public class DatabaseRecruiter
 {
     // Deklarasi instance variables yang digunakan.
     // Access Modifier variable di set private.
-    private String [] listRecruiter;
+    private static String [] listRecruiter;
 
-    /**
-     * Sebuah constructor default yang bernama DatabaseRecruiter.
-     * Access modifier dari constructor bertipe public.
-     * 
-     */
-    public DatabaseRecruiter()
-    {
-        // Tidak instance variable yang di declare
-    }
 
     /**
      * Sebuah method yang bernama addRecruiter, sepertinya method ini digunakan untuk menambahkan data recruiter.
@@ -51,7 +42,7 @@ public class DatabaseRecruiter
      * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
      * 
      */
-    public boolean removeRecruiter(Recruiter recruiter)
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
         return false;
     }
@@ -66,7 +57,7 @@ public class DatabaseRecruiter
      * @return null artinya tidak ada data (null) yang dikembalikkan
      * 
      */
-    public Recruiter getRecruiter()
+    public static Recruiter getRecruiter()
     {
         return null;
     }
@@ -82,7 +73,7 @@ public class DatabaseRecruiter
      * @return listRecruiter jadi mengembalikkan nilai/data yang ada didalam variable listRecruiter
      * 
      */
-    public String [] getListRecruiter()
+    public static String [] getListRecruiter()
     {
         return listRecruiter;
     }
