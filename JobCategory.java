@@ -21,7 +21,7 @@ public enum JobCategory
     //Diatur dengan access modifier private
     //Tipe data variablenya adalah String
     
-    private String jobcategory;
+    private String category;
     
     /**
      * Sebuah Constructor class Enum yang bernama JobCategory.
@@ -32,9 +32,9 @@ public enum JobCategory
      * @param jobcategory merupakan nilai inputan untuk variable jobcategory
      * 
      */
-    private JobCategory(String jobcategory)
+    private JobCategory(String category)
     {
-        this.jobcategory = jobcategory;
+        this.category = category;
     }
     
     /**
@@ -48,7 +48,7 @@ public enum JobCategory
      */
     @Override
     public String toString() {
-        return jobcategory;
+        return category;
     }
     
 }

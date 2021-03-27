@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=JobCategory
 comment0.text=\r\n\ Kelas\ Enum\ JobCategory.\r\n\ Kelas\ Enum\ \ merupakan\ sekumpulan\ variable\ yang\ didefinisikan\ menjadi\ tipe\ data\ konstanta\ (konstan).\r\n\ Kelas\ ini\ mendefiniskan\ data\ kategori\ dari\ pekerjaan.\r\n\r\n\ @author\ Helmi\ Arrazy\r\n\ @version\ 25-03-2021\r\n
-comment1.params=jobcategory
+comment1.params=category
 comment1.target=JobCategory(java.lang.String)
 comment1.text=\r\n\ Sebuah\ Constructor\ class\ Enum\ yang\ bernama\ JobCategory.\r\n\ Access\ Modifier\ pada\ constrcutor\ ini\ berjenis\ private.\r\n\ Parameter\ digunakan\ sebagai\ nilai\ inputan\ suatu\ fungsi\ ketika\ fungsi\ tersebut\ didefinisikan.\r\n\ Ada\ parameter\ yang\ digunakan\ untuk\ konstruktor\ ini,\ yang\ dapat\ langsung\ dilihat\ dibawah.\r\n\ \r\n\ @param\ jobcategory\ merupakan\ nilai\ inputan\ untuk\ variable\ jobcategory\r\n\ \r\n
 comment2.params=

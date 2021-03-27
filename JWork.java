@@ -15,9 +15,8 @@ public class JWork
         Recruiter recruiter2 = new Recruiter(123, "Helmi Arrazy", "helmiarrazy25@gmail.com", "085774110665", location2);
         Jobseeker jobseeker1 = new Jobseeker(1, "Helmi", "helmi@test.com", "123", "December 2021");
         Jobseeker jobseeker2 = new Jobseeker(567, "Jack", "jack@gmail.com", "oop123", "13 December 2021");
-        Invoice invoice1 = new Invoice(1, 2, "November", 2, jobseeker1);
-        Invoice invoice2 = new Invoice(298, 300, "19 November 2021", 2000, jobseeker2);
         
+    
         
         
         
@@ -46,9 +45,21 @@ public class JWork
         System.out.println(type1);
         System.out.println(type2);
         
+        InvoiceStatus status1 = InvoiceStatus.OnGoing;
+        InvoiceStatus status2 = InvoiceStatus.Finished;
+        InvoiceStatus status3 = InvoiceStatus.Cancelled;
+        System.out.println(status1);
+        System.out.println(status2);
+        System.out.println(status3);
+        
+        Invoice invoice2 = new Invoice(298, 300, "19 November 2021", 2000, jobseeker2, type1, status2);
+        
         System.out.println("\n");
         job1.printData();
         
+        
+        System.out.println("\n");
+        invoice2.printData();
     
     }
 }
