@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=PaymentType
 comment0.text=\r\n\ Kelas\ Enum\ PaymentType\r\n\ Kelas\ Enum\ \ merupakan\ sekumpulan\ variable\ yang\ didefinisikan\ menjadi\ tipe\ data\ konstanta\ (konstan).\r\n\ Kelas\ ini\ mendefiniskan\ data\ tipe\ pembayaran.\r\n\ \r\n\ @author\ Helmi\ Arrazy\r\n\ @version\ 25-03-2021\r\n
-comment1.params=paymenttype
+comment1.params=type
 comment1.target=PaymentType(java.lang.String)
 comment1.text=\r\n\ Sebuah\ Constructor\ class\ Enum\ yang\ bernama\ PaymentType.\r\n\ Access\ Modifier\ pada\ constrcutor\ ini\ berjenis\ private.\r\n\ Parameter\ digunakan\ sebagai\ nilai\ inputan\ suatu\ fungsi\ ketika\ fungsi\ tersebut\ didefinisikan.\r\n\ Ada\ parameter\ yang\ digunakan\ untuk\ konstruktor\ ini,\ yang\ dapat\ langsung\ dilihat\ dibawah.\r\n\ \r\n\ @param\ paymenttype\ merupakan\ nilai\ inputan\ untuk\ variable\ paymenttype\r\n\ \r\n
 comment2.params=

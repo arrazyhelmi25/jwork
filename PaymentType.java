@@ -14,7 +14,7 @@ public enum PaymentType
     //Instance Variable.
     //Diatur dengan access modifier private
     //Tipe data variablenya adalah String
-    private String paymenttype;
+    private String type;
     
     
     /**
@@ -26,9 +26,9 @@ public enum PaymentType
      * @param paymenttype merupakan nilai inputan untuk variable paymenttype
      * 
      */
-    private PaymentType(String paymenttype)
+    private PaymentType(String type)
     {
-        this.paymenttype=paymenttype;
+        this.type = type;
     }
     
     /**
@@ -42,6 +42,6 @@ public enum PaymentType
      */
     @Override
     public String toString() {
-        return paymenttype;
+        return type;
     }
 }

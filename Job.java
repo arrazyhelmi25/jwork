@@ -192,7 +192,8 @@ public class Job
         System.out.println("===================== JOB =====================");
         System.out.println("ID: " + getId());
         System.out.println("Name: " + getName());
-        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("Recruiter: " + getRecruiter().getName());
+        System.out.println("City: " + getRecruiter().getLocation().getCity());
         System.out.println("Fee: " + getFee());
         System.out.println("Category: "+ getCategory());
         
