@@ -32,6 +32,8 @@ public class Invoice
      * @param date  merupakan nilai inputan untuk variable date (tanggal)
      * @param totalFee merupakan nilai inputan untuk variable totalFee (total pembayaran)
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
+     * @param paymentType merupakan nilai inputan untuk variable paymentType
+     * @param status merupakan nilai inputan untuk variable status
      */
     
     public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
@@ -100,7 +102,7 @@ public class Invoice
     
     /**
      * Sebuah method getter (accessor) yang bernama getJobseeker untuk mendapatkan/mengembalkikan data jobseeker.
-     * Return type dari method ini adalah Jobseeker (yang merupakan class atau object).
+     * Return type dari method ini adalah Jobseeker (yang merupakan class).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
@@ -110,10 +112,27 @@ public class Invoice
         return jobseeker;
     }
     
+    /**
+     * Sebuah method getter (accessor) yang bernama getPaymentType untuk mendapatkan/mengembalkikan data paymentType.
+     * Return type dari method ini adalah PaymentType (yang merupakan class).
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     * 
+     * @return paymentType jadi mengembalikkan nilai yang ada didalam variable paymentType
+     */
     public PaymentType getPaymentType(){
         return paymentType;
     }
     
+    
+    /**
+     * Sebuah method getter (accessor) yang bernama getInvoiceStatus untuk mendapatkan/mengembalkikan data status.
+     * Return type dari method ini adalah InvoiceStatus (yang merupakan class).
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     * 
+     * @return status jadi mengembalikkan nilai yang ada didalam variable status
+     */
     public InvoiceStatus getInvoiceStatus(){
         return status;
     }
@@ -182,25 +201,44 @@ public class Invoice
         this.jobseeker = jobseeker; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
+    
+    /**
+     * Sebuah method setter (mutator) yang bernama setPaymentType untuk menetapkan/mengisi nilai dari variable paymentType.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu paymentType.
+     * Access modifier pada method berjenis public.
+     * 
+     * @param paymentType digunakan sebagai inputan untuk variable paymentType
+     */
     public void setPaymentType (PaymentType paymentType){
-        this.paymentType = paymentType;
+        this.paymentType = paymentType; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
+    
+    /**
+     * Sebuah method setter (mutator) yang bernama setInvoiceStatus untuk menetapkan/mengisi nilai dari variable status.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu status.
+     * Access modifier pada method berjenis public.
+     * 
+     * @param status digunakan sebagai inputan untuk variable status
+     */
     public void setInvoiceStatus (InvoiceStatus status){
-        this.status = status;
+        this.status = status; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
     /**
      * Sebuah method yang bernama prinData dengan return type void.
-     * Tidak ada instruksi yang dideclare didalam method tersebut.
-     * Sepertinya nanti akan digunakan untuk melakukan print data isi suatu variable.
+     * Ada instruksi yang dideclare didalam method ini,
+     * yaitu instruksi untuk melakukan print isi data instance variable yang dideclare pada kelas ini atau kelas lain.
+     * Method ini dipanggil melalui method main pada kelas JWork. 
      * Access Modifier pada method berjenis public.
      */
     public void printData()
     {
         System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + getId());
-        System.out.println("Name: " + getIdJob());
+        System.out.println("ID Job: " + getIdJob());
         System.out.println("Date: " + getDate());
         System.out.println("Seeker: " + getJobseeker().getName());
         System.out.println("Fee: " + getTotalFee());

@@ -1,6 +1,6 @@
 /**
  * Kelas Job, dalam kelas ini terdapat beberapa method acessor (get) dan mutator (set).
- * Serta adanya sebuah method yang bertipe void untuk melakukan printData.
+ * Serta adanya sebuah method yang bertipe void untuk melakukan printData nilai dari instance variables.
  * Sesuai dengan nama kelasnya (Job) yang berarti pekerjaan, sepertinya akan digunakan untuk mengatur segala data yang terkait dengan suatu pekerjaan.
  * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
  * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
@@ -183,8 +183,9 @@ public class Job
     
     /**
      * Sebuah method yang bernama prinData dengan return type void.
-     * Tidak ada instruksi yang dideclare didalam method tersebut.
-     * Sepertinya nanti akan digunakan untuk melakukan print data isi suatu variable.
+     * Ada instruksi yang dideclare didalam method ini,
+     * yaitu instruksi untuk melakukan print isi data instance variable yang dideclare pada kelas ini atau kelas lain.
+     * Method ini dipanggil melalui method main pada kelas JWork.
      * Access Modifier pada method berjenis public.
      */
     public void printData()

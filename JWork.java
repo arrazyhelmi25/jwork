@@ -52,7 +52,7 @@ public class JWork
         System.out.println(status2);
         System.out.println(status3);
         
-        Invoice invoice2 = new Invoice(298, 300, "19 November 2021", 2000, jobseeker2, type1, status2);
+        Invoice invoice2 = new Invoice(job1.getId(), 300, "19 November 2021", job1.getFee(), jobseeker2, type1, status2);
         
         System.out.println("\n");
         job1.printData();
