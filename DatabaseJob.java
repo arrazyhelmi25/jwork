@@ -51,7 +51,7 @@ public class DatabaseJob
     /**
      * Sebuah method yang bernama getJob, sepertinya method ini digunakan untuk mendapatkan job.
      * Access Modifier method berjenis public.
-     * Return type dari method berjenis Job (sepertinya object atau kelas).
+     * Return type dari method berjenis Job (yang merupakan class).
      * Tidak ada parameter yang digunakan pada method ini.
      * 
      * @return null artinya tidak ada data (null) yang dikembalikkan

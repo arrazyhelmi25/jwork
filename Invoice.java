@@ -9,17 +9,17 @@
  * @author Helmi Arrazy
  * @version 18-03-2021
  */
-public class Invoice
+public abstract class Invoice
 {
     // Deklarasi beberapa instance variables yang akan digunakan.
     // Access Modifier variable di set private.
     private int id;
-    private int idJob;
+    private Job job;
     private String date;
-    private int totalFee;
+    protected int totalFee;
     private Jobseeker jobseeker;
+    private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
-    private InvoiceStatus status;
 
     /**
      * Sebuah Constructor default yang bernama Invoice.
@@ -28,27 +28,26 @@ public class Invoice
      * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
      * 
      * @param id merupakan nilai inputan untuk variable id
-     * @param idJob  merupakan nilai inputan untuk variable idJob
+     * @param job  merupakan nilai inputan untuk variable job
      * @param date  merupakan nilai inputan untuk variable date (tanggal)
      * @param totalFee merupakan nilai inputan untuk variable totalFee (total pembayaran)
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      * @param paymentType merupakan nilai inputan untuk variable paymentType
-     * @param status merupakan nilai inputan untuk variable status
+     * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
     
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
+    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
          * yaitu variable instance pada class invoice yang ada diatas. 
          * Agar sistem komputer tidak bingung ketika menetapkan nilai variablenya, 
          * karena nama variable instance dan nama parameter dalam konstruktor sama, jadi harus direferensikan/diarahkan.*/
         this.id = id;
-        this.idJob = idJob;
+        this.job = job;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.paymentType = paymentType;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -71,8 +70,8 @@ public class Invoice
      * 
      * @return idJob jadi mengembalikkan nilai yang ada didalam variable idJob
      */
-    public int getIdJob(){
-        return idJob;
+    public Job getJob(){
+        return job;
     }
     
     /**
@@ -120,21 +119,19 @@ public class Invoice
      * 
      * @return paymentType jadi mengembalikkan nilai yang ada didalam variable paymentType
      */
-    public PaymentType getPaymentType(){
-        return paymentType;
-    }
+    public abstract PaymentType getPaymentType();
     
     
     /**
-     * Sebuah method getter (accessor) yang bernama getInvoiceStatus untuk mendapatkan/mengembalkikan data status.
+     * Sebuah method getter (accessor) yang bernama getInvoiceStatus untuk mendapatkan/mengembalkikan data invoiceStatus.
      * Return type dari method ini adalah InvoiceStatus (yang merupakan class).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
-     * @return status jadi mengembalikkan nilai yang ada didalam variable status
+     * @return invoiceStatus jadi mengembalikkan nilai yang ada didalam variable invoiceStatus
      */
     public InvoiceStatus getInvoiceStatus(){
-        return status;
+        return invoiceStatus;
     }
     
     
@@ -159,8 +156,8 @@ public class Invoice
      * 
      * @param idJob digunakan sebagai inputan untuk variable idJob
      */
-    public void setIdJob(int idJob){
-        this.idJob = idJob; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setJob(Job job){
+        this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
     /**
@@ -184,9 +181,8 @@ public class Invoice
      * 
      * @param totalFee digunakan sebagai inputan untuk variable totalFee
      */
-    public void setTotalFee(int totalFee){
-        this.totalFee = totalFee; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
-    }
+    
+    public abstract void setTotalFee();
     
     
     /**
@@ -216,15 +212,15 @@ public class Invoice
     
     
     /**
-     * Sebuah method setter (mutator) yang bernama setInvoiceStatus untuk menetapkan/mengisi nilai dari variable status.
+     * Sebuah method setter (mutator) yang bernama setInvoiceStatus untuk menetapkan/mengisi nilai dari variable invoiceStatus.
      * Return type dari method ini adalah void.
-     * Ada parameter yang digunakan pada method ini, yaitu status.
+     * Ada parameter yang digunakan pada method ini, yaitu invoiceStatus.
      * Access modifier pada method berjenis public.
      * 
-     * @param status digunakan sebagai inputan untuk variable status
+     * @param invoiceStatus digunakan sebagai inputan untuk variable invoiceStatus
      */
-    public void setInvoiceStatus (InvoiceStatus status){
-        this.status = status; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setInvoiceStatus (InvoiceStatus invoiceStatus){
+        this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
     /**
@@ -238,7 +234,7 @@ public class Invoice
     {
         System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + getId());
-        System.out.println("ID Job: " + getIdJob());
+        System.out.println("Job: " + getJob().getCategory());
         System.out.println("Date: " + getDate());
         System.out.println("Seeker: " + getJobseeker().getName());
         System.out.println("Fee: " + getTotalFee());

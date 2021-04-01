@@ -103,7 +103,7 @@ public class Recruiter
     
     /**
      * Sebuah method getter (accessor) yang bernama getLocation untuk mendapatkan/mengembalikkan data location.
-     * Return type dari method ini adalah Location (sepertinya kelas atau object).
+     * Return type dari method ini adalah Location (yang merupakan kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 

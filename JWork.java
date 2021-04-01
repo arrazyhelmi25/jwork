@@ -37,7 +37,14 @@ public class JWork
         System.out.println(category7);
         System.out.println(category8);
         
-        Job job1 = new Job (1, "Senior Designer", recruiter2, 1000, category7);
+        Job job1 = new Job (1, "Senior", recruiter2, 10000, category7);
+        Job job2 = new Job (2, "Junior", recruiter2, 1000, category6);
+        Bonus bonus1 = new Bonus (1, "ABCD", 10000, 10000000, true);
+        Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
+        
+        EwalletPayment payment1 = new EwalletPayment(1, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing);
+        EwalletPayment payment2 = new EwalletPayment(2, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus1);
+        EwalletPayment payment3 = new EwalletPayment(3, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus2);
         
         
         PaymentType type1 = PaymentType.BankPayment;
@@ -52,14 +59,21 @@ public class JWork
         System.out.println(status2);
         System.out.println(status3);
         
-        Invoice invoice2 = new Invoice(job1.getId(), 300, "19 November 2021", job1.getFee(), jobseeker2, type1, status2);
+        //Invoice invoice2 = new Invoice(job1.getId(), 300, "19 November 2021", job1.getFee(), jobseeker2, type1, status2);
         
         System.out.println("\n");
         job1.printData();
         
         
         System.out.println("\n");
-        invoice2.printData();
+        //invoice2.printData();
+        
+        System.out.println("\n");
+        payment1.printData();
+        System.out.println("\n");
+        payment2.printData();
+        System.out.println("\n");
+        payment3.printData();
     
     }
 }

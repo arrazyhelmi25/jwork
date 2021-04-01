@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=DatabaseBonus
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseBonus\ here.\r\n\r\n\ @author\ Helmi\ Arrazy\r\n\ @version\ 01-04-2021\r\n
+comment1.params=
+comment1.target=DatabaseBonus()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseBonus\r\n
+comment2.params=bonus
+comment2.target=boolean\ addBonus(Bonus)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=bonus
+comment3.target=boolean\ removeBonus(Bonus)
+comment4.params=
+comment4.target=Bonus\ getBonus()
+comment5.params=
+comment5.target=java.lang.String[]\ getListBonus()
+numComments=6

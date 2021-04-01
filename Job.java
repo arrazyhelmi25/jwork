@@ -87,7 +87,7 @@ public class Job
     
     /**
      * Sebuah method getter (accessor) yang bernama JobCategory untuk mendapatkan/mengembalikkan data category.
-     * Return type dari method ini adalah JobCategory (Objek atau Class).
+     * Return type dari method ini adalah JobCategory (yang merupakan kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
@@ -101,7 +101,7 @@ public class Job
     
     /**
      * Sebuah method getter (accessor) yang bernama getRecruiter untuk mendapatkan/mengembalikkan data recruiter.
-     * Return type dari method ini adalah Recruiter (sepertinya merupakan objek atau kelas).
+     * Return type dari method ini adalah Recruiter (yang merupakan kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
