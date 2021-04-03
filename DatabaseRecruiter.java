@@ -35,6 +35,7 @@ public class DatabaseRecruiter
     /**
      * Sebuah method yang bernama removeRecruiter, sepertinya method ini digunakan untuk membuang data recruiter.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe boolean.
      * Ada parameter yang digunakan pada method, yaitu recruiter.
      * 
@@ -51,6 +52,7 @@ public class DatabaseRecruiter
     /**
      * Sebuah method yang bernama getRecruiter, sepertinya method ini digunakan untuk mendapatkan data recruiter.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method berjenis Recruiter (sepertinya object atau kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * 
@@ -66,6 +68,7 @@ public class DatabaseRecruiter
     /**
      * Sebuah method yang bernama getListRecruiter, sepertinya method ini digunakan untuk mendapatkan daftar dari data recruiter.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe String array.
      * Tidak ada parameter yang digunakan pada method ini.
      * 

@@ -35,6 +35,7 @@ public class DatabaseJobseeker
     /**
      * Sebuah method yang bernama removeJobseeker, sepertinya method ini digunakan untuk membuang data jobseeker.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe boolean.
      * Ada parameter yang digunakan pada method, yaitu jobseeker.
      * 
@@ -51,6 +52,7 @@ public class DatabaseJobseeker
     /**
      * Sebuah method yang bernama getJobseeker, sepertinya method ini digunakan untuk mendapatkan data jobseeker.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method berjenis Jobseeker (sepertinya object atau kelas).
      * Tidak ada parameter yang digunakan pada method ini.
      * 
@@ -65,6 +67,7 @@ public class DatabaseJobseeker
     /**
      * Sebuah method yang bernama getListJobseeker, sepertinya method ini digunakan untuk mendapatkan daftar dari data jobseeker.
      * Access Modifier method berjenis public.
+     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
      * Return type dari method bertipe String array.
      * Tidak ada parameter yang digunakan pada method ini.
      * 
