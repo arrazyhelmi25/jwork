@@ -184,15 +184,8 @@ public class Recruiter
         this.location = location; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
-    
-    /**
-     * Sebuah method yang bernama prinData dengan return type void.
-     * Ada instruksi yang dideclare didalam method tersebut, yaitu menampilkan/mencetak isi data yang ada didalam method getName.
-     * Dimana didalam method getName ada instruksi untuk mengembalikkan isi variable name, 
-     * jadi data yang akan ditampilkan adalah data yang ada didalam variable name.
-     * Access Modifier pada method berjenis public
-     */
-    public void printData() {
-        System.out.println(getName()); //print data
+    @Override
+    public String toString(){
+        return "Id = "+getId()+"\nNama = "+getName()+"\nPhoneNumber = "+getPhoneNumber()+"\nLocation = "+getLocation();
     }
 }

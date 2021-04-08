@@ -181,24 +181,10 @@ public class Job
         this.category = category; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
-    /**
-     * Sebuah method yang bernama prinData dengan return type void.
-     * Ada instruksi yang dideclare didalam method ini,
-     * yaitu instruksi untuk melakukan print isi data instance variable yang dideclare pada kelas ini atau kelas lain.
-     * Method ini dipanggil melalui method main pada kelas JWork.
-     * Access Modifier pada method berjenis public.
-     */
-    public void printData()
-    {
-        System.out.println("===================== JOB =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Name: " + getName());
-        System.out.println("Recruiter: " + getRecruiter().getName());
-        System.out.println("City: " + getRecruiter().getLocation().getCity());
-        System.out.println("Fee: " + getFee());
-        System.out.println("Category: "+ getCategory());
-        
-        
+    @Override
+    public String toString(){
+        return "Id = "+getId()+"\nName = "+getName()+"\nRecruiter = "+getRecruiter().getName()+"\nCity = "+getRecruiter().getLocation().getCity()+"\nFee = "+getFee()+"\nCategory = "+getCategory();
     }
+    
     
 }

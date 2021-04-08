@@ -1,3 +1,9 @@
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 /**
  * Kelas Jobseeker, dalam kelas ini terdapat beberapa method acessor (get) dan mutator (set).
  * Serta adanya sebuah method yang bertipe void untuk melakukan printData.
@@ -17,7 +23,7 @@ public class Jobseeker
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    public Calendar joinDate;
 
     /**
      * Sebuah Constructor default yang bernama Jobseeker.
@@ -31,7 +37,7 @@ public class Jobseeker
      * @param password merupakan nilai inputan untuk variable password
      * @param joinDate merupakan nilai inputan untuk variable joinDate
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
          * yaitu variable instance pada class Jobseeker yang ada diatas. 
@@ -39,9 +45,29 @@ public class Jobseeker
          * karena nama variable instance dan nama parameter dalam konstruktor sama, jadi harus direferensikan/diarahkan.*/
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = joinDate;
+    }
+    
+    
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+    
+    
+    public Jobseeker(int id, String name, String email, String password)
+    {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
     }
 
     /**
@@ -108,7 +134,7 @@ public class Jobseeker
      * 
      * @return joinDate jadi mengembalikkan nilai yang ada didalam variable joinDate
      */
-    public String getJoinDate()
+    public Calendar getJoinDate()
     {
         return joinDate;
     }
@@ -150,9 +176,18 @@ public class Jobseeker
      * 
      * @param email digunakan sebagai inputan untuk variable email
      */
-    public void setEmail(String email)
-    {
-        this.email = email; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setEmail(String email){
+        String regex = "^[a-zA-Z0-9&*_~]+([\\.{1}]?[a-z]+)+@[a-z0-9]+([\\.]{1}[a-z]+)\\S+(?!.*?\\.\\.)";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches())
+        {
+            this.email = email;
+        }
+        else
+        {
+                this.email = "";
+        }
     }
     
     
@@ -166,33 +201,44 @@ public class Jobseeker
      */
     public void setPassword(String password)
     {
-        this.password = password; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+        String regexP = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$";
+        Pattern pattern = Pattern.compile(regexP);
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches())
+            this.password = password;
+        else
+            this.password = "";
     }
     
     /**
      * Sebuah method setter (mutator) yang bernama setJoinDate untuk menetapkan/mengisi nilai dari variable joinDate.
-     * Return type dari method ini adalah void.
+     * Return type dari method ini adalah Calendar.
      * Ada parameter yang digunakan pada method ini, yaitu joinDate.
      * Access modifier pada method berjenis public.
      * 
      * @param joinDate digunakan sebagai inputan untuk variable joinDate
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate = joinDate; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
     
+    public void setJoinDate(int year, int month, int dayOfMonth){
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
     
-    /**
-     * Sebuah method yang bernama prinData dengan return type void
-     * Ada instruksi yang dideclare didalam method tersebut, yaitu menampilkan/mencetak isi data yang ada didalam method getName.
-     * Dimana didalam method getName ada instruksi untuk mengembalikkan isi variable name, 
-     * jadi data yang akan ditampilkan adalah data yang ada didalam variable name.
-     * Access Modifier pada method berjenis public.
-     */
-    public void printData()
-    {
-        System.out.println(getName()); //print data
+    
+    @Override
+    public String toString() {
+        if (this.joinDate == null) {
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword();
+        } 
+        else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getJoinDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() + "\nJoin Date = " + date;
+        }
+
     }
 }

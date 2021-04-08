@@ -175,19 +175,9 @@ public class Bonus {
     }
 
     
-    
-    /**
-     * Sebuah method yang bernama prinData dengan return type void.
-     * Ada instruksi yang dideclare didalam method ini,
-     * yaitu instruksi untuk melakukan print isi data instance variable yang dideclare pada kelas ini.
-     * Access Modifier pada method berjenis public.
-     */
-    public void printData() {
-        System.out.println("ID: " + getId());
-        System.out.println("Referral Code: " + getReferralCode());
-        System.out.println("Extra Fee: " + getExtraFee());
-        System.out.println("Min Total Fee: " + getMinTotalFee());
-        System.out.println("Active: " + getActive());
+    @Override
+    public String toString(){
+        return "Id = "+getId()+"\nReferral Code = "+getReferralCode()+"\nExtraFee = "+getExtraFee()+"\nMin Total Fee = "+getMinTotalFee()+"\nActive Status = "+getActive();
     }
 
 }

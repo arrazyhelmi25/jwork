@@ -23,6 +23,5 @@ comment7.params=description
 comment7.target=void\ setDescription(java.lang.String)
 comment7.text=\r\n\ Sebuah\ method\ setter\ (mutator)\ yang\ bernama\ setDescription\ untuk\ menetapkan/mengisi\ nilai\ dari\ variable\ description.\r\n\ Return\ type\ dari\ method\ ini\ adalah\ void.\r\n\ Ada\ parameter\ yang\ digunakan\ pada\ method\ ini,\ yaitu\ description.\r\n\ Access\ modifier\ pada\ method\ berjenis\ public.\r\n\ \r\n\ @param\ description\ digunakan\ sebagai\ inputan\ untuk\ variable\ description\r\n
 comment8.params=
-comment8.target=void\ printData()
-comment8.text=\r\n\ Sebuah\ method\ yang\ bernama\ prinData\ dengan\ return\ type\ void.\r\n\ Ada\ instruksi\ yang\ dideclare\ didalam\ method\ tersebut,\ yaitu\ menampilkan/mencetak\ isi\ data\ yang\ ada\ didalam\ method\ getProvince.\r\n\ Dimana\ didalam\ method\ getProvince\ ada\ instruksi\ untuk\ mengembalikkan\ isi\ variable\ province,\ \r\n\ jadi\ data\ yang\ akan\ ditampilkan\ adalah\ data\ yang\ ada\ didalam\ variable\ province.\r\n\ Access\ Modifier\ pada\ method\ berjenis\ public.\r\n
+comment8.target=java.lang.String\ toString()
 numComments=9

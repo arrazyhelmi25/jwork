@@ -123,16 +123,8 @@ public class Location
         this.description = description; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
-    
-    /**
-     * Sebuah method yang bernama prinData dengan return type void.
-     * Ada instruksi yang dideclare didalam method tersebut, yaitu menampilkan/mencetak isi data yang ada didalam method getProvince.
-     * Dimana didalam method getProvince ada instruksi untuk mengembalikkan isi variable province, 
-     * jadi data yang akan ditampilkan adalah data yang ada didalam variable province.
-     * Access Modifier pada method berjenis public.
-     */
-    public void printData()
-    { 
-         System.out.println(getProvince()); //print data
+    @Override
+    public String toString(){
+        return "Province = "+getProvince()+"\nCity = "+getCity()+"\nDescription = "+getDescription();
     }
 }
