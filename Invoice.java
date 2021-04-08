@@ -1,6 +1,6 @@
 /**
- * Kelas abstract Invoice, dalam kelas ini terdapat beberapa method acessor (get) mutator (set), dan abstract.
- * Kelas ini merupakan Superclass dari kelas EwalletPayment
+ * Kelas abstract Invoice, dalam kelas ini terdapat beberapa method acessor (get), mutator (set), dan method abstract.
+ * Kelas ini merupakan Superclass dari kelas EwalletPayment.
  * Sesuai dengan nama kelasnya (Invoice) yang berarti faktur, sepertinya akan digunakan untuk mengatur segala data terkait suatu pembayaran/tagihan.
  * Didalam kelas ini juga ada beberapa access modifier (public, private, dan protected) yang digunakan pada variable, method, atau constructor.
  * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.

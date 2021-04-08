@@ -17,16 +17,6 @@ public class DatabaseBonus
     private static String [] listBonus;
 
     /**
-     * Constructor default yang bernala DatabaseBonus.
-     * Access Modifier bertipe public
-     */
-    public DatabaseBonus()
-    {
-        //Tidak ada implementasi
-    }
-
-    
-    /**
      * Sebuah method yang bernama addBonus, sepertinya method ini digunakan untuk menambahkan data bonus;
      * Access Modifier method berjenis public.
      * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
