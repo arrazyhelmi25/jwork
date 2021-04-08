@@ -157,7 +157,7 @@ public class EwalletPayment extends Invoice
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
         System.out.println("Date: " + getDate());
-        System.out.println("Job Seeker: " + getJobseeker().getName());
+        System.out.println("Jobseeker: " + getJobseeker().getName());
         setTotalFee();
         if (bonus != null && (bonus.getActive() == true) && super.totalFee > bonus.getMinTotalFee()) {
             System.out.println("Referral Code: " + bonus.getReferralCode());
