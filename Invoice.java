@@ -1,3 +1,7 @@
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 /**
  * Kelas abstract Invoice, dalam kelas ini terdapat beberapa method acessor (get), mutator (set), dan method abstract.
  * Kelas ini merupakan Superclass dari kelas EwalletPayment.
@@ -16,7 +20,7 @@ public abstract class Invoice
     // Access Modifier variable di set private dan protected
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
@@ -35,7 +39,7 @@ public abstract class Invoice
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
     
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
          * yaitu variable instance pada class invoice yang ada diatas. 
@@ -80,7 +84,7 @@ public abstract class Invoice
      * 
      * @return date jadi mengembalikkan nilai yang ada didalam variable date
      */
-    public String getDate(){
+    public Calendar getDate(){
         return date;
     }
     
@@ -164,10 +168,14 @@ public abstract class Invoice
      * 
      * @param date digunakan sebagai inputan untuk variable date
      */
-    public void setDate(String date){
-        this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setDate(Calendar date){
+        this.date = Calendar.getInstance();//Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
+    
+     public void setDate(int year, int month, int dayOfMonth){
+        this.date = new GregorianCalendar(year, month - 1, dayOfMonth);
+    }
     
     /**
      * Sebuah method abstract yang bernama setTotalFee, dengan return type void.
@@ -203,11 +211,6 @@ public abstract class Invoice
         this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
-    
-    /**
-     * Sebuah method abstract yang bernama prinData, dengan return type void.
-     * Tidak ada parameter yang digunakan.
-     * Access Modifier pada method berjenis public.
-     */
-    public abstract void printData();
+
+    public abstract String toString(); 
 }

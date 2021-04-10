@@ -186,6 +186,6 @@ public class Recruiter
     
     @Override
     public String toString(){
-        return "Id = "+getId()+"\nNama = "+getName()+"\nPhoneNumber = "+getPhoneNumber()+"\nLocation = "+getLocation();
+        return "Id = "+getId()+"\nName = "+getName()+"\nPhoneNumber = "+getPhoneNumber()+"\nLocation = "+getLocation();
     }
 }

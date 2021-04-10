@@ -47,7 +47,7 @@ public enum PaymentType
      * Jadi ketika data enum yang sudah dideklarasikan diatas dipanggil pada kelas lain untuk di print,
      * maka data yang diprint adalah nilai konstan string yang sudah diset pada masing - masing data enum tersebut.
      * 
-     * Return type jadi mengembalikkan nilai atau data yang ada didalam variable type
+     * @return type jadi mengembalikkan nilai atau data yang ada didalam variable type
      * 
      */
     @Override

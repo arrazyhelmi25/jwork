@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 /**
  * Kelas BankPayment, dalam kelas ini terdapat beberapa method acessor (get) mutator (set) yang di Override dari Superclassnya.
  * Kelas ini digunakan untuk mengatur data terkait pembayaran.
@@ -35,9 +36,9 @@ public class BankPayment extends Invoice
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
     }
 
     
@@ -55,9 +56,9 @@ public class BankPayment extends Invoice
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      * @param adminFee merupakan nilai inputan untuk variable adminFee
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         //Digunakan keyword 'this', karena nama parameter pada constructor sama dengan nama pada instance.
         this.adminFee = adminFee;
     }
@@ -151,17 +152,19 @@ public class BankPayment extends Invoice
      * 
      */
     @Override
-    public void printData(){
-        System.out.println("===================== INVOICE =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
-        System.out.println("Jobseeker: " + getJobseeker().getName());
-        System.out.println("Admin Fee: " + getAdminFee());
-        setTotalFee();
-        System.out.println("Total Fee: " + getTotalFee());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Payment Type: " + getPaymentType());
-        
+    public String toString()
+    {
+        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = formattedDate.format(getDate().getTime());
+        if (adminFee != 0)
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName() + "Admin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        }
+        else
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName()+ "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        }
     }
 }

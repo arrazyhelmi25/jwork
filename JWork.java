@@ -16,7 +16,7 @@ public class JWork
         Recruiter recruiter1 = new Recruiter(1, "Helmi", "helmi@gmail.com", "1234", location1);
         Recruiter recruiter2 = new Recruiter(123, "Helmi Arrazy", "helmiarrazy25@gmail.com", "085774110665", location2);
         //Jobseeker jobseeker1 = new Jobseeker(1, "Helmi", "helmi@test.com", "123", "December 2021");
-        //Jobseeker jobseeker2 = new Jobseeker(567, "Jack", "jack@gmail.com", "oop123", "13 December 2021");
+       // Jobseeker jobseeker2 = new Jobseeker(567, "Jack", "jack@gmail.com", "oop123", "13 December 2021");
         
     
         
@@ -45,12 +45,12 @@ public class JWork
         Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
         
         //EwalletPayment payment1 = new EwalletPayment(1, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing);
-        //EwalletPayment payment2 = new EwalletPayment(2, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus1);
+        
         //EwalletPayment payment3 = new EwalletPayment(3, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus2);
         
         
         //BankPayment bankpayment1 = new BankPayment (1, job1, "20 Maret 2020", jobseeker2, InvoiceStatus.Finished);
-        //BankPayment bankpayment2 = new BankPayment (1, job1, "20 Maret 2020", jobseeker2, InvoiceStatus.Finished,1000);
+        
         
         
         
@@ -99,5 +99,13 @@ public class JWork
         jobseeker1.setPassword("Arrazy1"); 
         System.out.println("\n");
         System.out.println(jobseeker1);
+        System.out.println("\n");
+        EwalletPayment payment2 = new EwalletPayment(2, job1, jobseeker2, InvoiceStatus.OnGoing, bonus1);
+        BankPayment bankpayment2 = new BankPayment (1, job1, jobseeker2, InvoiceStatus.Finished,1000);
+        
+        System.out.println("\n");
+        System.out.println(payment2);
+        System.out.println("\n");
+        System.out.println(bankpayment2);
     }
 }
