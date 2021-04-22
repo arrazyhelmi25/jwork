@@ -61,6 +61,7 @@ public abstract class Invoice
      * @return id jadi mengembalikkan nilai yang ada didalam variable id
      */
     public int getId(){
+
         return id;
     }
     
@@ -73,6 +74,7 @@ public abstract class Invoice
      * @return job jadi mengembalikkan nilai yang ada didalam variable job
      */
     public Job getJob(){
+
         return job;
     }
     
@@ -110,6 +112,7 @@ public abstract class Invoice
      * @return jobseeker jadi mengembalikkan nilai yang ada didalam variable jobseeker
      */
     public Jobseeker getJobseeker(){
+
         return jobseeker;
     }
     
@@ -131,6 +134,7 @@ public abstract class Invoice
      * @return invoiceStatus jadi mengembalikkan nilai yang ada didalam variable invoiceStatus
      */
     public InvoiceStatus getInvoiceStatus(){
+
         return invoiceStatus;
     }
     
