@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Kelas DatabaseBonus,
@@ -14,71 +15,90 @@ public class DatabaseBonus
 {
     // Deklarasi instance variables yang digunakan.
     // Access Modifier variable di set private.
-    private static String [] listBonus;
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
+    private static int lastId = 0;
 
-    /**
-     * Sebuah method yang bernama addBonus, sepertinya method ini digunakan untuk menambahkan data bonus;
-     * Access Modifier method berjenis public.
-     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
-     * Return type dari method bertipe boolean.
-     * Ada parameter yang digunakan pada method, yaitu bonus.
-     * 
-     * @param bonus digunakan sebagai inputan untuk method ini
-     * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
-     * 
-     */
+    public static ArrayList<Bonus> getBonusDatabase()
+    {
+        return BONUS_DATABASE;
+    }
+
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Bonus getBonusById(int id){
+        Bonus x = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                x = bonus;
+            }
+            else {
+                x = null;
+            }
+        }
+        return x;
+    }
+
+    public static Bonus getBonusByReferralCode(String referralCode){
+        Bonus x = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (referralCode.equals(bonus.getReferralCode())) {
+                x = bonus;
+            }
+            else {
+                x = null;
+            }
+        }
+        return x;
+    }
+
     public static boolean addBonus(Bonus bonus)
     {
+        BONUS_DATABASE.add(bonus);
+        lastId = bonus.getId();
+        return true;
+    }
+
+    public static boolean activeBonus (int id)
+    {
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(true);
+                x = true;
+            }
+            else {
+                x = false;
+            }
+        }
+        return x;
+    }
+
+    public static boolean deactiveBonus (int id)
+    {
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(false);
+                x = true;
+            }
+            else {
+                x = false;
+            }
+        }
+        return x;
+    }
+
+    public static boolean removeBonus (int id)
+    {
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (bonus.getId() == id) {
+                BONUS_DATABASE.remove(bonus);
+                return true;
+            }
+        }
         return false;
-    }
-    
-    
-    /**
-     * Sebuah method yang bernama removeBonus, sepertinya method ini digunakan untuk membuang data bonus.
-     * Access Modifier method berjenis public.
-     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
-     * Return type dari method bertipe boolean.
-     * Ada parameter yang digunakan pada method, yaitu bonus.
-     * 
-     * @param bonus digunakan sebagai inputan untuk method ini
-     * @return false jenis nilai yang dikembalikkan berupa tipe data boolean yaitu 'false'
-     * 
-     */
-    public static boolean removeBonus(Bonus bonus)
-    {
-        return false;
-    }
-    
-    
-    /**
-     * Sebuah method yang bernama getBonus, sepertinya method ini digunakan untuk mendapatkan data bonus.
-     * Access Modifier method berjenis public.
-     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
-     * Return type dari method berjenis Bonus (yang merupakan class).
-     * Tidak ada parameter yang digunakan pada method ini.
-     * 
-     * @return null artinya tidak ada data (null) yang dikembalikkan
-     * 
-     */
-    public static Bonus getBonus()
-    {
-        return null;
-    }
-    
-    
-    /**
-     * Sebuah method yang bernama getListBonus, sepertinya method ini digunakan untuk mendapatkan daftar dari data bonus.
-     * Access Modifier method berjenis public.
-     * Keyword static digunakan agar method ini dapat diakses dari class lain tanpa harus membuat objeknya terlebih dahulu.
-     * Return type dari method bertipe String array.
-     * Tidak ada parameter yang digunakan pada method ini.
-     * 
-     * 
-     * @return listBonus artinya mengembalikkan nilai/data yang ada didalam variable listBonus
-     * 
-     */
-    public static String [] getListBonus()
-    {
-        return listBonus;
     }
 }

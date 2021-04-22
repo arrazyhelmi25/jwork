@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 /**
  * Kelas BankPayment, dalam kelas ini terdapat beberapa method acessor (get) mutator (set) yang di Override dari Superclassnya.
  * Kelas ini digunakan untuk mengatur data terkait pembayaran.
@@ -36,9 +37,9 @@ public class BankPayment extends Invoice
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
-    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
     }
 
     
@@ -56,9 +57,9 @@ public class BankPayment extends Invoice
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      * @param adminFee merupakan nilai inputan untuk variable adminFee
      */
-    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
         //Digunakan keyword 'this', karena nama parameter pada constructor sama dengan nama pada instance.
         this.adminFee = adminFee;
     }
@@ -120,19 +121,14 @@ public class BankPayment extends Invoice
      * 
      */
     @Override
-    public void setTotalFee(){
-        /* Jika isi variable adminFee tidak sama dengan 0, maka variabel totalFee pada superclass akan mempunyai nilai dari pengurangan variable fee
-         * pada kelas Job dengan variable adminFee.
-         */
-        if(adminFee!=0){
-            super.totalFee = getJob().getFee() - getAdminFee();
-        }
-        
-        /* Jika sebaliknya, yaitu isi variable adminFee sama dengan 0, maka variable totalFee pada superclass akan di set dengan nilai yang sama
-         * yang ada didalam variable fee pada kelas Job.
-         */
-        else{
-            super.totalFee = getJob().getFee();
+    public void setTotalFee() {
+        for(Job job : getJobs()) {
+            if(adminFee != 0) {
+                totalFee = job.getFee() - getAdminFee();
+            }
+            else {
+                totalFee = job.getFee();
+            }
         }
     }
     
@@ -152,16 +148,19 @@ public class BankPayment extends Invoice
      * 
      */
     @Override
-     public String toString() {
+    public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
-
-        if (adminFee != 0){
-            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
-                + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
-        }else{
-            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
-                + getJobseeker().getName()+ "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        String res = "";
+        for (Job job : getJobs()) {
+            if (adminFee != 0) {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
         }
+        return res;
     }
 }

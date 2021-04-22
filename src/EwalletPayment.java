@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 /**
  * Kelas EwalletPayment, dalam kelas ini terdapat beberapa method acessor (get) mutator (set) yang di Override dari Superclassnya.
  * Kelas ini digunakan untuk mengatur data terkait pembayaran.
@@ -36,9 +37,9 @@ public class EwalletPayment extends Invoice
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
     }
     
     
@@ -56,9 +57,9 @@ public class EwalletPayment extends Invoice
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      * @param bonus merupakan nilai inputan untuk variable bonus
      */
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus){
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
         //Digunakan keyword 'this', karena nama parameter pada constructor sama dengan nama pada instance.
         this.bonus = bonus;
     }
@@ -121,20 +122,15 @@ public class EwalletPayment extends Invoice
      * 
      */
     @Override
-    public void setTotalFee(){
-        /* Jika isi variable bonus tidak kosong, isi variable active pada kelas Bonus diset dengan true, dan isi variable fee pada kelas Job lebih besar
-         * dibandingkan isi variable minTotalFee yang ada di kelas Bonus, maka isi variable totalFee pada superclass akan di set dengan pertambahan
-         * variable fee pada kelas Job dan variable extraFee pada kelas Bonus.
-         */
-        if(bonus!=null&&(getBonus().getActive()==true)&&(getJob().getFee() > getBonus().getMinTotalFee())){
-            super.totalFee = getJob().getFee() + getBonus().getExtraFee();
-        }
-        
-        /* Jika kondisinya sebaliknya seperti yang sudah disebutkan diatas, maka variable totalFee pada superclass akan di set dengan nilai yang sama
-         * yang ada didalam variable fee pada kelas Job.
-         */
-        else{
-            super.totalFee = getJob().getFee();
+    public void setTotalFee() {
+        ArrayList<Job> jobs = getJobs();
+        for(Job job: jobs){
+            int fee = job.getFee();
+            if (bonus != null && (bonus.getActive() == true) && fee > bonus.getMinTotalFee()) {
+                super.totalFee = fee + bonus.getExtraFee();
+            } else {
+                super.totalFee = fee;
+            }
         }
     }
     
@@ -152,16 +148,23 @@ public class EwalletPayment extends Invoice
      * yaitu maksudnya ada implementasi instruksi didalam method.
      * 
      */
-   @Override
+    @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
-        if (bonus != null && (bonus.getActive() == true) && getJob().getFee() > bonus.getMinTotalFee()){
-            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
-                + getJobseeker().getName() + "\nReferral Code = " + bonus.getReferralCode() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
-        }else{
-            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
-                + getJobseeker().getName()+ "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        String res = "";
+        for (Job job : getJobs()) {
+            if ((bonus != null) && (bonus.getActive() == true) && (job.getFee() > bonus.getMinTotalFee())) {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nReferral Code = " + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
+
         }
+        return res;
     }
 }

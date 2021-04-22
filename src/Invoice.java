@@ -2,6 +2,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 /**
  * Kelas abstract Invoice, dalam kelas ini terdapat beberapa method acessor (get), mutator (set), dan method abstract.
  * Kelas ini merupakan Superclass dari kelas EwalletPayment.
@@ -19,7 +20,7 @@ public abstract class Invoice
     // Deklarasi beberapa instance variables yang akan digunakan.
     // Access Modifier variable di set private dan protected
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
@@ -33,23 +34,22 @@ public abstract class Invoice
      * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
      * 
      * @param id merupakan nilai inputan untuk variable id
-     * @param job  merupakan nilai inputan untuk variable job
-     * @param date  merupakan nilai inputan untuk variable date (tanggal)
+     * @param jobs  merupakan nilai inputan untuk variable job
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
     
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
          * yaitu variable instance pada class invoice yang ada diatas. 
          * Agar sistem komputer tidak bingung ketika menetapkan nilai variablenya, 
          * karena nama variable instance dan nama parameter dalam konstruktor sama, jadi harus direferensikan/diarahkan.*/
         this.id = id;
-        this.job = job;
+        this.jobs = jobs;
         this.date = Calendar.getInstance();
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
+        this.invoiceStatus = InvoiceStatus.OnGoing;
     }
 
     /**
@@ -73,9 +73,8 @@ public abstract class Invoice
      * 
      * @return job jadi mengembalikkan nilai yang ada didalam variable job
      */
-    public Job getJob(){
-
-        return job;
+    public ArrayList<Job> getJobs(){
+        return jobs;
     }
     
     /**
@@ -158,10 +157,10 @@ public abstract class Invoice
      * Ada parameter yang digunakan pada method ini, yaitu job.
      * Access modifier pada method berjenis public
      * 
-     * @param job digunakan sebagai inputan untuk variable job
+     * @param jobs digunakan sebagai inputan untuk variable job
      */
-    public void setJob(Job job){
-        this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setJobs(ArrayList<Job> jobs){
+        this.jobs = jobs; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     
     /**
