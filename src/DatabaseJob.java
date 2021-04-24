@@ -11,33 +11,29 @@ import java.util.ArrayList;
  */
 public class DatabaseJob
 {
-    // Deklarasi instance variables yang digunakan.
-    // Access Modifier variable di set private.
+    //instance variable
     private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();
     private static int lastId = 0;
 
-    public static ArrayList<Job> getJobDatabase()
-    {
+    public static ArrayList<Job> getJobDatabase() {
         return JOB_DATABASE;
     }
 
-    public static int getLastId()
-    {
+    public static int getLastId() {
         return lastId;
     }
 
     public static Job getJobById(int id){
-        Job x = null;
-        for (Job job : JOB_DATABASE) {
-            if (id == job.getId()) {
-                x = job;
+        Job temp = null;
+        for (Job job : JOB_DATABASE){
+            if (id == job.getId()){
+                temp = job;
             }
         }
-        return x;
+        return temp;
     }
 
-    public static ArrayList<Job> getJobByRecruiter(int recruiterId)
-    {
+    public static ArrayList<Job> getJobByRecruiter(int recruiterId){
         ArrayList<Job> temp = new ArrayList<Job>();
         for (Job job : JOB_DATABASE) {
             if (recruiterId == job.getRecruiter().getId()) {
@@ -59,21 +55,27 @@ public class DatabaseJob
         return temp;
     }
 
-    public static boolean addJob(Job job)
-    {
+    public static boolean addJob(Job job){
         JOB_DATABASE.add(job);
         lastId = job.getId();
         return true;
     }
 
-    public static boolean removeJob (int id)
-    {
-        for (Job job : JOB_DATABASE) {
-            if (job.getId() == job.getId()) {
+    /**
+     * removeJob untuk menghapus Job
+     *
+     * @param job berisi object job
+     * @return boolean
+     */
+    public static boolean remove(Job job){
+        for (Job job1 : JOB_DATABASE){
+            if (job.getId() == job1.getId()){
                 JOB_DATABASE.remove(job);
                 return true;
             }
         }
         return false;
     }
+
+
 }

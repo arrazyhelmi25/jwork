@@ -126,8 +126,20 @@ public class JWork
                 System.out.println("\n=====================Jobseeker Database====================\n");
                 System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
                 DatabaseJob.addJob(new Job(1, "FrontEnd Engineer TokoA", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.Frontend));
-                DatabaseJob.addJob(new Job(1, "FrontEnd", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.Frontend));
-                DatabaseJob.addJob(new Job(1, "Data Scientist TokoC", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
+                DatabaseJob.addJob(new Job(2, "FrontEnd", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.Frontend));
+                DatabaseJob.addJob(new Job(3, "Data Scientist TokoC", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
                 System.out.println("\n=====================Job Database By Category====================\n");
-                System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
+                System.out.println(DatabaseJob.getJobByCategory(JobCategory.Frontend));
+
+
+                DatabaseBonus.addBonus(new Bonus(1, "JKL40", 1000, 500, false));
+                DatabaseBonus.addBonus(new Bonus(2, "JKL40", 1000, 500, true));
+
+                System.out.println(DatabaseBonus.getBonusById(1));
+                System.out.println(DatabaseBonus.getBonusById(2));
+
+
+
+
+
 }}
