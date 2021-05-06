@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5e15b85-ca86-49eb-8a1d-abda7c8dac29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BonusNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmailAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FeeCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JobNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JobseekerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RecruiterNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReferralCodeAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseBonus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseBonus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJobseeker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseJobseeker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseRecruiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseRecruiter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/jwork/JWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/JWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JWork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
