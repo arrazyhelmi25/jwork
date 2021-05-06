@@ -23,15 +23,21 @@ public class DatabaseJob
         return lastId;
     }
 
-    public static Job getJobById(int id){
+    public static Job getJobById(int id) throws JobNotFoundException {
         Job temp = null;
-        for (Job job : JOB_DATABASE){
-            if (id == job.getId()){
-                temp = job;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                temp = element;
+                return temp;
             }
         }
+        if (temp == null){
+            throw new JobNotFoundException(id);
+        }
+
         return temp;
     }
+
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
         ArrayList<Job> temp = new ArrayList<Job>();
@@ -64,17 +70,17 @@ public class DatabaseJob
     /**
      * removeJob untuk menghapus Job
      *
-     * @param job berisi object job
+     *
      * @return boolean
      */
-    public static boolean remove(Job job){
-        for (Job job1 : JOB_DATABASE){
-            if (job.getId() == job1.getId()){
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        for (Job job : JOB_DATABASE) {
+            if (job.getId() == id) {
                 JOB_DATABASE.remove(job);
                 return true;
             }
         }
-        return false;
+        throw new JobNotFoundException(id);
     }
 
 
