@@ -61,7 +61,7 @@ public class DatabaseJob
         return temp;
     }
 
-    public static boolean addJob(Job job){
+    public static boolean addJob(Job job) {
         JOB_DATABASE.add(job);
         lastId = job.getId();
         return true;

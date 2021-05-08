@@ -51,10 +51,6 @@ public class EwalletPayment extends Invoice
      * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
      * 
      * @param id merupakan nilai inputan untuk variable id
-     * @param job  merupakan nilai inputan untuk variable job
-     * @param date  merupakan nilai inputan untuk variable date (tanggal)
-     * @param jobseeker merupakan nilai inputan untuk variable jobseeker
-     * @param invoiceStatus merupakan nilai inputan untuk variable status
      * @param bonus merupakan nilai inputan untuk variable bonus
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
@@ -160,7 +156,7 @@ public class EwalletPayment extends Invoice
                         + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
             } else {
                 res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
-                        + getJobseeker().getName() + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getJobseeker().getName() + "\nTotal Fee = "
                         + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
             }
 
