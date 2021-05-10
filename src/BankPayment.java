@@ -12,153 +12,84 @@ import java.util.ArrayList;
  * @author Helmi Arrazy
  * @version 04-03-2021
  */
-public class BankPayment extends Invoice
-{
-    /* 
-     * Deklarasi instance variables yang digunakan.
-     * Access Modifier variable di set private.
-     * variable static mempunyai arti variable yang dimiliki kelas dan diinisialisasi hanya sekali pada awal eksekusi
-     * Keyword final digunakan untuk membuat variable tersebut mempunyai nilai konstan yang sudah ditentukan, dan tidak dapat ubah lagi,
-     * atau nilai variable tersebut tidak bisa ditetapkan ulang.
-     * 
-     */
+public class BankPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
     /**
-     * Sebuah Constructor yang bernama BankPayment.
-     * Access Modifier pada constrcutor ini berjenis public.
-     * Parameter digunakan sebagai nilai inputan suatu fungsi ketika fungsi tersebut didefinisikan.
-     * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang mengikuti parameter constructor pada Superclassnya.
-     * 
-     * @param id merupakan nilai inputan untuk variable id
-     * @param job  merupakan nilai inputan untuk variable job
-     * @param date  merupakan nilai inputan untuk variable date (tanggal)
-     * @param jobseeker merupakan nilai inputan untuk variable jobseeker
-     * @param invoiceStatus merupakan nilai inputan untuk variable status
+     * Constructor untuk object dari class BankPayment
      */
-    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
-        //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
     }
 
-    
-    /**
-     * Sebuah Constructor yang bernama BankPayment.
-     * Constructor ini menerapakan konsep Polymorphism, karena mempunyai nama yang sama seperti constructor sebelumnya, tetapi mempunyai parameter yang berbeda.
-     * Access Modifier pada constrcutor ini berjenis public.
-     * Parameter digunakan sebagai nilai inputan suatu fungsi ketika fungsi tersebut didefinisikan.
-     * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
-     * 
-     * @param id merupakan nilai inputan untuk variable id
-     * @param job  merupakan nilai inputan untuk variable job
-     * @param date  merupakan nilai inputan untuk variable date (tanggal)
-     * @param jobseeker merupakan nilai inputan untuk variable jobseeker
-     * @param invoiceStatus merupakan nilai inputan untuk variable status
-     * @param adminFee merupakan nilai inputan untuk variable adminFee
-     */
-    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee){
-        //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
+    public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee) {
         super(id, jobs, jobseeker);
-        //Digunakan keyword 'this', karena nama parameter pada constructor sama dengan nama pada instance.
         this.adminFee = adminFee;
     }
-    
-    
+
     /**
-     * Sebuah method getter (accessor) yang bernama getPaymentType untuk mendapatkan/mengembalikkan data PAYMENT_TYPE.
-     * Return type dari method ini adalah PaymentType (yang merupakan kelas).
-     * Digunakan keyword Override karena method ini mempunyai nama dan struktur yang sama percis dengan yang ada di superclasnya,
-     * sehingga untuk membuat ulang method ini diperlukan keyword tersebut.
-     * Intinya keyword override ini kita dapat membuat method dengan nama atau struktur yang sama percis di superclass nya,
-     * namun mempunyai instruksi di dalamnya yang berbeda, sehingga program menjadi tidak bingung ketika ingin dieksekusi.
-     * Tidak ada parameter yang digunakan pada method ini.
-     * Access modifier pada method berjenis public.
-     * 
-     * @return PAYMENT_TYPE jadi mengembalikkan nilai yang ada didalam variable PAYMENT_TYPE
+     * method getPaymentType, berfungsi sebagai getter untuk mengambil value
+     * PAYMENT_TYPE.BankPayment
+     *
+     * @return PAYMENT_TYPE.BankPayment
      */
-    @Override
-    public PaymentType getPaymentType(){
+    public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
-    
-    
+
     /**
-     * Sebuah method getter (accessor) yang bernama getAdminFee untuk mendapatkan/mengembalikkan data adminFee.
-     * Return type dari method ini adalah int.
-     * Tidak ada parameter yang digunakan pada method ini.
-     * Access modifier pada method berjenis public.
-     * 
-     * @return adminFee jadi mengembalikkan nilai yang ada didalam variable adminFee
+     * method getAdminFee, berfungsi sebagai getter untuk mengambil value adminFee
+     *
+     * @return adminFee
      */
-    public int getAdminFee(){
+    public int getAdminFee() {
         return adminFee;
     }
-    
-    
+
     /**
-     * Sebuah method setter (mutator) yang bernama setAdminFee untuk menetapkan/mengisi nilai dari variable adminFee.
-     * Return type dari method ini adalah void.
-     * Ada parameter yang digunakan pada method ini, yaitu adminFee.
-     * Access modifier pada method berjenis public.
-     * 
-     * @param adminFee digunakan sebagai inputan untuk variable adminFee
+     * method setAdminFee, berfungsi sebagai setter untuk mengisi value adminFee
+     *
+     * @param adminFee
      */
-    public void setAdminFee(int adminFee){
-        this.adminFee=adminFee;
+    public void setAdminFee(int adminFee) {
+        this.adminFee = adminFee;
     }
-    
-    
+
     /**
-     * Sebuah method setter (mutator) yang bernama setTotalFee untuk menetapkan/mengisi nilai dari variable bonus.
-     * Return type dari method ini adalah void.
-     * Tidak ada parameter yang digunakan pada method ini.
-     * Access modifier pada method berjenis public.
-     * Digunakan keyword Override karena method ini mempunyai nama dan struktur yang sama percis dengan yang ada di superclasnya,
-     * sehingga untuk membuat ulang method ini diperlukan keyword tersebut.
-     * Selalin itu method ini pada superclassnya dibuat dalam bentuk abstrak, sehingga pada subclass ini dibuat dalam bentuk konkritnya,
-     * yaitu maksudnya ada implementasi instruksi didalam method.
-     * 
+     * method setTotalFee, berfungsi sebagai setter untuk mengisi value totalFee
+     *
      */
-    @Override
     public void setTotalFee() {
-        for(Job job : getJobs()) {
-            if(adminFee != 0) {
-                totalFee = job.getFee() - getAdminFee();
-            }
-            else {
-                totalFee = job.getFee();
+        ArrayList<Job> jobs = getJobs();
+
+        for (Job job : jobs) {
+            int fee = job.getFee();
+
+            if (adminFee != 0) {
+                super.totalFee += fee - adminFee;
+            } else {
+                super.totalFee += fee;
             }
         }
     }
-    
-    
-    
+
     /**
-     * Sebuah method yang bernama prinData dengan return type void.
-     * Ada instruksi yang dideclare didalam method ini,
-     * yaitu instruksi untuk melakukan print isi data instance variable yang dideclare pada kelas ini atau kelas lain.
-     * Method ini dipanggil melalui method main pada kelas JWork.
-     * Tidak ada parameter yang digunakan pada method ini.
-     * Access modifier pada method berjenis public.
-     * Digunakan keyword Override karena method ini mempunyai nama dan struktur yang sama percis dengan yang ada di superclasnya,
-     * sehingga untuk membuat ulang method ini diperlukan keyword tersebut.
-     * Selain itu method ini pada superclassnya dibuat dalam bentuk abstrak, sehingga pada subclass ini dibuat dalam bentuk konkritnya,
-     * yaitu maksudnya ada implementasi instruksi didalam method.
-     * 
+     * method toString, berfungsi untuk mencetak instance variable ke layar
      */
-    @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
         String res = "";
         for (Job job : getJobs()) {
             if (adminFee != 0) {
-                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
-                        + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+                res = res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date
+                        + "\nJob Seeker = " + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
             } else {
-                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
-                        + getJobseeker().getName() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+                res = res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date
+                        + "\nJob Seeker = " + getJobseeker().getName() + "\nTotal Fee = " + getTotalFee()
+                        + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
             }
         }
         return res;
