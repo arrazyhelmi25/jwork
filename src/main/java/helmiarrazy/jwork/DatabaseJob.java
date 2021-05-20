@@ -41,15 +41,14 @@ public class DatabaseJob
 
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
-        ArrayList<Job> temp = new ArrayList<Job>();
-        for (Job job : JOB_DATABASE) {
-            if (recruiterId == job.getRecruiter().getId()) {
-                temp.add(job);
-            } else {
-                return null;
+        ArrayList<Job> dummy = new ArrayList<Job>();
+        for(int i = 0; i < JOB_DATABASE.size(); i++) {
+            if(JOB_DATABASE.get(i).getRecruiter().getId() == recruiterId) {
+                dummy.add(JOB_DATABASE.get(i));
             }
         }
-        return temp;
+        return dummy;
+
     }
 
     public static ArrayList<Job> getJobByCategory(JobCategory category) {
