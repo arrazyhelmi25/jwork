@@ -99,7 +99,7 @@ public class InvoiceController {
             }
         }
         try {
-            Invoice invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, job);
+            Invoice invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs,
                     DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
             DatabaseInvoice.addInvoice(invoice);
             invoice.setTotalFee();
