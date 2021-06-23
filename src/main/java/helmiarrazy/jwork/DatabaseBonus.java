@@ -2,29 +2,41 @@ package helmiarrazy.jwork;
 import java.util.ArrayList;
 
 /**
- * Kelas DatabaseBonus,
- * Sesuai dengan nama kelasnya, sepertinya akan digunakan untuk mengatur segala data terkait suatu bonus, atau database bonus pekerjaan.
- * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
- * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
- * Access Modifier bersifat private berarti hanya dapat diakses didalam kelas itu sendiri saja.
- * 
+ * Kelas DatabaseBonus, digunakan untuk mengatur segala data terkait suatu bonus, atau database bonus pekerjaan.
  * 
  * @author Helmi Arrazy
- * @version 01-04-2021
+ * @version 22-04-2021
  */
 public class DatabaseBonus {
     // instance variables
     private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId = 0;
 
+
+    /**
+     * Method getter (accessor) yang bernama getBonusDatabase, berfungsi untuk mengambil isi list data BONUS_DATABASE;
+     *
+     * @return BONUS_DATABASE mengembalikkan semua isi data BONUS_DATABASE
+     */
     public static ArrayList<Bonus> getBonusDatabase(){
         return BONUS_DATABASE;
     }
 
+    /**
+     * Method getter (accessor) yang bernama getLastId, berfungsi untuk mendapatkan Id terakhir dari Bonus
+     *
+     * @return lastId mengembalikkan isi variable lastId
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    /**
+     * Method getter (accessor) yang bernama getBonusById, berfungsi untuk mendapatkan data Bonus berdasarkan Id nya
+     *
+     * @param id yaitu menggunakan inputan id dari bonus untuk menampilkan data bonus yang sesuai
+     * @return temp sebagai objek dari Bonus
+     */
     public static Bonus getBonusById(int id) throws BonusNotFoundException{
         Bonus temp = null;
         for (Bonus bonus : BONUS_DATABASE) {
@@ -39,6 +51,13 @@ public class DatabaseBonus {
         return temp;
     }
 
+
+    /**
+     * Method getter (accessor) yang bernama getBonusByReferralCode, berfungsi untuk mendapatkan data Bonus berdasarkan referral code nya
+     *
+     * @param referralCode yaitu menggunakan inputan referral code dari bonus untuk menampilkan data bonus yang sesuai
+     * @return temp sebagai objek dari Bonus
+     */
     public static Bonus getBonusByReferralCode(String referralCode){
         Bonus temp = null;
         for (Bonus bonus : BONUS_DATABASE) {
@@ -49,7 +68,12 @@ public class DatabaseBonus {
         return temp;
     }
 
-
+    /**
+     * Method addBonus, berfungsi untuk menambahkan data Bonus baru kedalam Database Bonus
+     *
+     * @param bonus sebagai inputan data bonus baru yang akan ditambahkan ke Database Bonus
+     * @return booelan untuk menunjukkan keberhasilan dari method ini
+     */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus element : BONUS_DATABASE) {
             if (element.getReferralCode() == bonus.getReferralCode()) {
@@ -61,6 +85,12 @@ public class DatabaseBonus {
         return true;
     }
 
+    /**
+     * Method activeBonus, berfungsi untuk aktivasi data bonus yang ada pada Database Bonus
+     *
+     * @param id sebagai inputan id untuk bonus yang akan diaktifkan
+     * @return temp yang berisikan data boolean untuk menunjukkan keberhasilan dari method ini
+     */
     public static boolean activateBonus(int id){
         boolean temp = false;
         for (Bonus bonus : BONUS_DATABASE) {
@@ -72,6 +102,13 @@ public class DatabaseBonus {
         return temp;
     }
 
+
+    /**
+     * Method deactiveBonus, berfungsi untuk menonaktifkan bonus yang ada pada Database Bonus
+     *
+     * @param id sebagai inputan id untuk bonus yang akan dinonaktifkan
+     * @return temp yang berisikan data boolean untuk menunjukkan keberhasilan dari method ini
+     */
     public static boolean deactivateBonus(int id){
         boolean temp = false;
         for (Bonus bonus : BONUS_DATABASE) {
@@ -84,6 +121,12 @@ public class DatabaseBonus {
     }
 
 
+    /**
+     * Method removeBonus, berfungsi untuk menghapus bonus yang ada pada Database Bonus
+     *
+     * @param id sebagai inputan id untuk bonus yang akan dihapus
+     * @return boolean untuk menunjukkan keberhasilan dari method ini
+     */
     public static boolean removeBonus(int id) throws BonusNotFoundException {
         for (Bonus bonus : BONUS_DATABASE) {
             if (bonus.getId() == id) {

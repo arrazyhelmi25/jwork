@@ -2,18 +2,35 @@ package helmiarrazy.jwork.controller;
 
 import helmiarrazy.jwork.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
+/**
+ * Kelas InvoiceController, berfungsi untuk mengatur (control) data invoice melalui Web API Service
+ *
+ * @author Helmi Arrazy
+ * @version 22-05-2021
+ */
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
 
-    @RequestMapping("")
+    /**
+     * Method getter (accessor) yang bernama getAllInvoice, berfungsi untuk menampilkan semua data invoice yang ada didalam database
+     *
+     * @return semua data invoice yang ada didatabase
+     */
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Invoice> getAllInvoice() {
-        return DatabaseInvoice.getInvoiceDatabase();
+        return (DatabaseInvoice.getInvoiceDatabase());
     }
 
+
+    /**
+     * Method getter (accessor) yang bernama getInvoiceById, berfungsi untuk mendapatkan data invoice berdasarkan id nya
+     *
+     * @param id sebagai inputan id dari invoice yang akan ditampilkan
+     * @return data invoice yang sesuai dengan id yang diinputkan
+     */
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
         Invoice invoice = null;
@@ -26,29 +43,30 @@ public class InvoiceController {
         return invoice;
     }
 
-    @RequestMapping("/Jobseeker/{JobseekerId}")
+
+    /**
+     * Method getter (accessor) yang bernama getInvoiceByJobseeker, berfungsi untuk mendapatkan data invoice berdasarkan Id Jobseeker
+     *
+     * @param jobseekerId yaitu menggunakan inputan id jobseeker untuk menampilkan Invoice yang sesuai
+     * @return data invoice yang sesuai dengan id jobseeker yang telah diinputkan
+     */
+    @RequestMapping("/jobseeker/{jobseekerId}")
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         ArrayList<Invoice> invoice = null;
         invoice = DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
+
         return invoice;
     }
 
-    @RequestMapping(value = "invoiceStatus/{id}", method = RequestMethod.PUT)
-    public Invoice changeInvoiceStatus(@PathVariable int id,
-                                       @RequestParam(value = "status") InvoiceStatus status) {
-        Invoice invoice = null;
-        try {
-            invoice = DatabaseInvoice.getInvoiceById(id);
-            invoice.setInvoiceStatus(status);
-            return invoice;
-        } catch (InvoiceNotFoundException e) {
-            e.getMessage();
-            return null;
-        }
-
-    }
 
 
+    /**
+     * Method removeInvoice, berfungsi untuk menghapus invoice yang ada pada Database Invoice
+     *
+     * @param id sebagai inputan id untuk invoice yang akan dihapus
+     * @return boolean true jika invoice berhasil dihapus
+     * @return boolean false jika invoice gagal dihapus
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public boolean removeInvoice(@PathVariable int id) {
         try {
@@ -61,12 +79,45 @@ public class InvoiceController {
     }
 
 
+    /**
+     * Method changeInvoiceStatus, berfungsi untuk mengubah status dari invoice yang ada di dalam Database Invoice
+     *
+     * @param id sebagai inputan id untuk invoice yang akan diubah statusnya
+     * @param status yaitu jenis status baru yang akan ditetapkan kepada status invoice lama yang akan diubah
+     * @return data invoice yang berhasil diubah statusnya
+     * @return null jika invoice yang ingin diubah statusnya tidak ada di database
+     */
+    @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
+    public Invoice changeInvoiceStatus(@PathVariable int id,
+                                       @RequestParam(value = "status") InvoiceStatus status){
+        Invoice invoice = null;
+        try {
+            invoice = DatabaseInvoice.getInvoiceById(id);
+            invoice.setInvoiceStatus(status);
+            return invoice;
+        } catch (InvoiceNotFoundException e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
+
+    /**
+     * Method addBankPayment, berfungsi untuk menambahkan data invoice baru dengan metode pembayaran (payment type) Bank Payment
+     *
+     * @param jobIdList sebagai inputan untuk id dari job
+     * @param jobseekerId sebagai inputan untuk id dari jobseeker
+     * @param adminFee sebagai inputan untuk data admin fee
+     *
+     * @return invoice jika invoice berhasil ditambahkan kedalam database
+     * @return null atau data kosong jika invoice gagal ditambahkan ke database
+     */
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
                                   @RequestParam(value = "adminFee") int adminFee) {
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for (Integer integer : jobIdList) {
             try {
                 jobs.add(DatabaseJob.getJobById(integer));
@@ -75,9 +126,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
+            invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
             invoice.setTotalFee();
-        } catch (JobseekerNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         boolean status = false;
@@ -93,12 +144,23 @@ public class InvoiceController {
         }
     }
 
-    @RequestMapping(value = "createEWalletPayment", method = RequestMethod.POST)
+
+    /**
+     * Method addEwalletPayment, berfungsi untuk menambahkan data invoice baru dengan metode pembayaran (payment type) Ewallet Payment
+     *
+     * @param jobIdList sebagai inputan untuk id dari job
+     * @param jobseekerId sebagai inputan untuk id dari jobseeker
+     * @param referralCode sebagai inputan untuk referral code bonus
+     *
+     * @return invoice jika invoice berhasil ditambahkan kedalam database
+     * @return null atau data kosong jika invoice gagal ditambahkan ke database
+     */
+    @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                      @RequestParam(value = "jobseekerId") int jobseekerId,
                                      @RequestParam(value = "referralCode") String referralCode) {
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for(var i = 0; i < jobIdList.size(); i++) {
             try {
                 jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
@@ -107,9 +169,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
+            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonusPostgre.getBonusByReferralCode(referralCode));
             invoice.setTotalFee();
-        } catch (JobseekerNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         boolean status = false;
