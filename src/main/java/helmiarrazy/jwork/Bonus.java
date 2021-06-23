@@ -166,8 +166,11 @@ public class Bonus {
 
     /**
      * Method toString, berfungsi untuk mencetak (print) instance variable ke layar
+<<<<<<< HEAD
      *
      * @return semua isi data instance variable pada kelas ini
+=======
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @Override
     public String toString(){

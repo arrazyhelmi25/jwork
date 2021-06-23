@@ -79,7 +79,12 @@ public class JobController {
      * @param category sebagai inputan data category
      * @param recruiterId sebagai inputan data id recruiter
      *
+<<<<<<< HEAD
      * @return job jadi menampilkan data job yang berhasil ditambahkan, sedangkan return null atau data kosong jika job gagal ditambahkan ke database
+=======
+     * @return job jadi menampilkan data job yang berhasil ditambahkan
+     * @return null atau data kosong jika job gagal ditambahkan ke database
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,

@@ -64,7 +64,12 @@ public class InvoiceController {
      * Method removeInvoice, berfungsi untuk menghapus invoice yang ada pada Database Invoice
      *
      * @param id sebagai inputan id untuk invoice yang akan dihapus
+<<<<<<< HEAD
      * @return booelan untuk menunjukkan keberhasilan dari method ini
+=======
+     * @return boolean true jika invoice berhasil dihapus
+     * @return boolean false jika invoice gagal dihapus
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public boolean removeInvoice(@PathVariable int id) {
@@ -83,7 +88,12 @@ public class InvoiceController {
      *
      * @param id sebagai inputan id untuk invoice yang akan diubah statusnya
      * @param status yaitu jenis status baru yang akan ditetapkan kepada status invoice lama yang akan diubah
+<<<<<<< HEAD
      * @return data invoice yang berhasil diubah statusnya, sedangkan return null jika invoice yang ingin diubah statusnya tidak ada di database
+=======
+     * @return data invoice yang berhasil diubah statusnya
+     * @return null jika invoice yang ingin diubah statusnya tidak ada di database
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@PathVariable int id,
@@ -107,7 +117,12 @@ public class InvoiceController {
      * @param jobseekerId sebagai inputan untuk id dari jobseeker
      * @param adminFee sebagai inputan untuk data admin fee
      *
+<<<<<<< HEAD
      * @return invoice jika invoice berhasil ditambahkan kedalam database, sedangkan return null atau data kosong jika invoice gagal ditambahkan ke database
+=======
+     * @return invoice jika invoice berhasil ditambahkan kedalam database
+     * @return null atau data kosong jika invoice gagal ditambahkan ke database
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
@@ -149,7 +164,12 @@ public class InvoiceController {
      * @param jobseekerId sebagai inputan untuk id dari jobseeker
      * @param referralCode sebagai inputan untuk referral code bonus
      *
+<<<<<<< HEAD
      * @return invoice jika invoice berhasil ditambahkan kedalam database, sedangkan return null atau data kosong jika invoice gagal ditambahkan ke database
+=======
+     * @return invoice jika invoice berhasil ditambahkan kedalam database
+     * @return null atau data kosong jika invoice gagal ditambahkan ke database
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,

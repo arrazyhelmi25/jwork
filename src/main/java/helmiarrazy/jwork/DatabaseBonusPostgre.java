@@ -82,7 +82,11 @@ public class DatabaseBonusPostgre {
     /**
      * Method getter (accessor) yang bernama getLastBonusId, berfungsi untuk mendapatkan ID bonus terakhir dari database
      *
+<<<<<<< HEAD
      * @return value yang berisi id terakhir dari bonus
+=======
+     * return value yang berisi id terakhir dari bonus
+>>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     public static int getLastBonusId() {
         int value = 0;
