@@ -1,10 +1,3 @@
-/**
- * Kelas BonusNotFoundException merupakan sebuah class yang digunakan untuk menangani kesalahan (error) pada bonus, jika bonus yang diinputkan ternyata tidak ada di Database Bonus
- *
- * @author Helmi Arrazy
- * @version 06-05-2021
- */
-
 package helmiarrazy.jwork;
 
 /**
