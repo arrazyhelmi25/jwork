@@ -1,19 +1,13 @@
 package helmiarrazy.jwork;
 
 /**
- * Kelas Bonus, dalam kelas ini terdapat beberapa method acessor (get) dan mutator (set).
- * Serta adanya sebuah method yang bertipe void untuk melakukan printData nilai dari instance variables.
- * Sesuai dengan nama kelasnya (Bonus), akan digunakan untuk mengatur segala data yang terkait dengan bonus pada suatu pekerjaan.
- * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
- * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
- * Access Modifier bersifat private berarti hanya dapat diakses didalam kelas itu sendiri saja.
+ * Kelas Bonus, akan digunakan untuk mengatur segala data yang terkait dengan bonus pada suatu pekerjaan
  *
  * @author Helmi Arrazy
  * @version 01-04-2021
  */
 public class Bonus {
     // Deklarasi beberapa instance variables yang akan digunakan.
-    // Access Modifier variable di set private.
     private int id;
     private String referralCode;
     private int extraFee;
@@ -22,10 +16,7 @@ public class Bonus {
     
     
     /**
-     * Sebuah Constructor default yang bernama Bonus.
-     * Access Modifier pada constrcutor ini berjenis public.
-     * Parameter digunakan sebagai nilai inputan suatu fungsi ketika fungsi tersebut didefinisikan.
-     * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
+     * Constructor default kelas Bonus.
      * 
      * @param id merupakan nilai inputan untuk variable id
      * @param referralCode merupakan nilai inputan untuk variable referralCode
@@ -34,10 +25,6 @@ public class Bonus {
      * @param active merupakan nilai inputan untuk variable active ('True' or 'False)
      */
     public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active) {
-        /* Digunakan sebuah keyword 'this'.Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri, 
-         * yaitu variable instance pada class Job yang ada diatas. 
-         * Agar sistem komputer tidak bingung ketika menetapkan nilai variablenya, 
-         * karena nama variable instance dan nama parameter dalam konstruktor sama, jadi harus direferensikan/diarahkan.*/
         this.id = id;
         this.referralCode = referralCode;
         this.extraFee = extraFee;
@@ -104,7 +91,7 @@ public class Bonus {
      * Tidak ada parameter yang digunakan pada method ini.
      * Access modifier pada method berjenis public.
      * 
-     * @return active jadi mengembalikkan nilai yang ada didalam variable active ('True' or 'False')
+     * @return boolean jadi mengembalikkan nilai yang ada didalam variable active ('True' or 'False')
      */
     public boolean getActive() {
         return active;
@@ -176,7 +163,12 @@ public class Bonus {
         this.active = active;
     }
 
-    
+
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar
+     *
+     * @return semua isi data instance variable pada kelas ini
+     */
     @Override
     public String toString(){
         return "Id = "+getId()+"\nReferral Code = "+getReferralCode()+"\nExtraFee = "+getExtraFee()+"\nMin Total Fee = "+getMinTotalFee()+"\nActive Status = "+getActive();

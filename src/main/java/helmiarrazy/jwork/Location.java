@@ -124,7 +124,15 @@ public class Location
     {
         this.description = description; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
+
+
+
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar.
+     * Ketika Objek atau kelas ini dipanggil untuk di print, maka hasil printnya akan sebuah pesan yang berisikan semua data instance variable.
+     *
+     * @return semua data instance variable ke layar
+     */
     @Override
     public String toString(){
         return "Province = "+getProvince()+"\nCity = "+getCity()+"\nDescription = "+getDescription();

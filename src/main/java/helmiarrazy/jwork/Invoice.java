@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 /**
  * Kelas abstract Invoice, dalam kelas ini terdapat beberapa method acessor (get), mutator (set), dan method abstract.
- * Kelas ini merupakan Superclass dari kelas EwalletPayment.
+ * Kelas ini merupakan Superclass dari kelas EwalletPayment dan BankPayment.
  * Sesuai dengan nama kelasnya (Invoice) yang berarti faktur, sepertinya akan digunakan untuk mengatur segala data terkait suatu pembayaran/tagihan.
  * Didalam kelas ini juga ada beberapa access modifier (public, private, dan protected) yang digunakan pada variable, method, atau constructor.
  * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
@@ -29,6 +29,7 @@ public abstract class Invoice
     private InvoiceStatus invoiceStatus;
     //private PaymentType paymentType;
 
+
     /**
      * Sebuah Constructor default yang bernama Invoice.
      * Access Modifier pada constrcutor ini berjenis public.
@@ -38,7 +39,6 @@ public abstract class Invoice
      * @param id merupakan nilai inputan untuk variable id
      * @param jobs  merupakan nilai inputan untuk variable job
      * @param jobseeker merupakan nilai inputan untuk variable jobseeker
-     * @param invoiceStatus merupakan nilai inputan untuk variable status
      */
     
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
@@ -68,10 +68,7 @@ public abstract class Invoice
     }
     
     /**
-     * Sebuah method getter (accessor) yang bernama getJob untuk mendapatkan/mengembalikkan data job.
-     * Return type dari method ini adalah Job(yang merupakan kelas).
-     * Tidak ada parameter yang digunakan pada method ini.
-     * Access modifier pada method berjenis public.
+     * Sebuah method getter (accessor) yang bernama getJobs untuk mendapatkan/mengembalikkan data job.
      * 
      * @return job jadi mengembalikkan nilai yang ada didalam variable job
      */
@@ -215,7 +212,12 @@ public abstract class Invoice
     public void setInvoiceStatus (InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
 
+    /**
+     * Sebuah method abstract yang bernama toString, dengan return type String.
+     * Tidak ada parameter yang digunakan.
+     * Access modifier pada method berjenis public.
+     *
+     */
     public abstract String toString(); 
 }

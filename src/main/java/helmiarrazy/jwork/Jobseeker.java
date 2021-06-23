@@ -136,6 +136,8 @@ public class Jobseeker
          * dengan kriteria password (regex) yang ditentukan, jika sudah maka baru akan disimpan ke variable password.
          */
         setPassword(password);
+
+        this.joinDate = Calendar.getInstance();
     }
     
     
@@ -231,7 +233,7 @@ public class Jobseeker
      * 
      * @param name digunakan sebagai inputan untuk variable name
      */
-    public void setName(String Name)
+    public void setName(String name)
     {
         this.name = name; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
@@ -312,18 +314,16 @@ public class Jobseeker
     public void setJoinDate(int year, int month, int dayOfMonth){
         this.joinDate = new GregorianCalendar(year, month - 1, dayOfMonth);
     }
-    
-    
-    
+
+
     /**
      * Sebuah method yang bernama toString.
      * Method tersebut digunakan untuk merepresentasikan sebuah objek, kedalam tipe String.
-     * Sehingga jika objek dipanggil maka akan mengembalikkan (return) sebuah data string yang sudah ditentukan.  
+     * Sehingga jika objek dipanggil maka akan mengembalikkan (return) sebuah data string yang sudah ditentukan.
      * Return type dari method bertipe String.
      * Access Modifier diatur public.
-     * 
-     * @return id, name, email, password, date jadi mengembalikkan atau menampilkan semua data yang ada di instance variable jika variable joinDate tidak kosong.
-     * @return id, name, email, password jadi hanya mengembalikkan keempat data variable tersebut jika variable joinDate kosong.
+     *
+     * @return id, name, email, password, date jadi mengembalikkan atau menampilkan semua data yang ada di instance variable jika variable joinDate tidak kosong, sedangkan return id, name, email, password jadi hanya mengembalikkan keempat data variable tersebut jika variable joinDate kosong.
      */
     @Override
     public String toString() {

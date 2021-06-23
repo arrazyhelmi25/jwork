@@ -4,58 +4,78 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
- * Praktikum OOP - Program "JWork" class EwalletPayment: berfungsi untuk
- * meng-generate object yang merepresentasikan pembayaran dengan E-Wallet
+ * Kelas EwalletPayment berfungsi untuk mengatur data mengenai invoice yang menggunakan pembayaran dengan E-Wallet.
+ * Kelas ini merupakan Subclass dari Kelas Invoice.
  *
  * @author Helmi Arrazy
  * @version 01-04-2021
  */
 public class EwalletPayment extends Invoice {
+    // Instance Variable
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
 
+
     /**
-     * Constructor untuk object dari class EwalletPayment
+     * Constructor pertama untuk object dari class EwalletPayment
+     *
+     * @param id merupakan nilai inputan untuk variable id
+     * @param jobs merupakan nilai inputan untuk variable jobs
+     * @param jobseeker merupakan nilai inputan untuk variable jobseeker
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
     }
 
+
+    /**
+     * Constructor kedua untuk object dari class EwalletPayment
+     *
+     * @param id merupakan nilai inputan untuk variable id
+     * @param jobs merupakan nilai inputan untuk variable jobs
+     * @param jobseeker merupakan nilai inputan untuk variable jobseeker
+     * @param bonus merupakan nilai inputan untuk variable bonus
+     */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus) {
         super(id, jobs, jobseeker);
         this.bonus = bonus;
     }
 
+
     /**
-     * method getPaymentType, berfungsi sebagai getter untuk mengambil value
-     * PAYMENT_TYPE.EwalletPayment
+     * Method getter (accessor) yang bernama getPaymentType, berfungsi untuk mengambil nilai PAYMENT_TYPE.EwalletPayment
      *
-     * @return PAYMENT_TYPE.EwalletPayment
+     * @return PAYMENT_TYPE mengembalikkan nilai dari variable tersebut yaitu PAYMENT_TYPE.EwalletPayment
      */
     public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
 
+
     /**
-     * method getBonus, berfungsi sebagai getter untuk mengambil value bonus
+     * Method getter (accessor) yang bernama getBonus, berfungsi sebagai untuk mengambil data yang ada didalam variable bonus
      *
-     * @return bonus
+     * @return bonus mengembalikkan isi dari variable bonus
      */
     public Bonus getBonus() {
         return bonus;
     }
 
+
+
     /**
-     * method setBonus, berfungsi sebagai setter untuk mengisi value bonus
+     * Method setter (mutator) yang bernama setBonus, berfungsi untuk mengatur atau menset nilai dari variable bonus
      *
-     * @param bonus
+     * @param bonus digunakan sebagai inputan untuk variable bonus
      */
     public void setBonus(Bonus bonus) {
         this.bonus = bonus;
     }
 
+
+
     /**
-     * method setTotalFee, berfungsi sebagai setter untuk mengisi value totalFee
+     * Method setter (mutator) yang bernama setTotalFee, berfungsi untuk mengisi value totalFee
      *
      */
     public void setTotalFee() {
@@ -72,10 +92,14 @@ public class EwalletPayment extends Invoice {
         }
     }
 
-    /**
-     * method toString, berfungsi untuk mencetak instance variable ke layar
-     */
 
+
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar.
+     * Ketika Objek atau kelas ini dipanggil untuk di print, maka hasil printnya akan sebuah pesan yang berisikan semua data instance variable.
+     *
+     * @return res mengembalikkan atau print data instance variable ke layar
+     */
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());

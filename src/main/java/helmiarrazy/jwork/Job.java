@@ -28,9 +28,9 @@ public class Job
      * 
      * @param id merupakan nilai inputan untuk variable id
      * @param name  merupakan nilai inputan untuk variable name
+     * @param recruiter merupakan nilai inputan untuk variable recruiter
      * @param fee  merupakan nilai inputan untuk variable fee
      * @param category merupakan nilai inputan untuk variable category
-     * @param recruiter merupakan nilai inputan untuk variable recruiter
      */
     public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
@@ -181,7 +181,14 @@ public class Job
     {
         this.category = category; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    
+
+
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar.
+     * Ketika Objek atau kelas ini dipanggil untuk di print, maka hasil printnya akan sebuah pesan yang berisikan semua data instance variable.
+     *
+     * @return semua instance variable yang ada di kelas job ini
+     */
     @Override
     public String toString(){
         return "Id = "+getId()+"\nName = "+getName()+"\nRecruiter = "+getRecruiter().getName()+"\nCity = "+getRecruiter().getLocation().getCity()+"\nFee = "+getFee()+"\nCategory = "+getCategory();
