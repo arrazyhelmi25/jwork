@@ -323,12 +323,7 @@ public class Jobseeker
      * Return type dari method bertipe String.
      * Access Modifier diatur public.
      *
-<<<<<<< HEAD
      * @return id, name, email, password, date jadi mengembalikkan atau menampilkan semua data yang ada di instance variable jika variable joinDate tidak kosong, sedangkan return id, name, email, password jadi hanya mengembalikkan keempat data variable tersebut jika variable joinDate kosong.
-=======
-     * @return id, name, email, password, date jadi mengembalikkan atau menampilkan semua data yang ada di instance variable jika variable joinDate tidak kosong.
-     * @return id, name, email, password jadi hanya mengembalikkan keempat data variable tersebut jika variable joinDate kosong.
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @Override
     public String toString() {

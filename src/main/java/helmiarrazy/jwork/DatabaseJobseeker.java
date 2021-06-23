@@ -95,12 +95,7 @@ public class DatabaseJobseeker {
      *
      * @param email sebagai inputan untuk mendapatkan data Jobseeker berdasarkan email yang diinputkan
      * @param password sebagai inputan untuk mendapatkan data Jobseeker berdasarkan password yang diinputkan
-<<<<<<< HEAD
      * @return jobseeker menampilkan data jobseeker berdasarkan kedua parameter yang telah diinputkan (email dan password) jika email dan password tersebut ada didalam database, sedangkan return null menampilkan data kosong jika email dan password yang diinputkan untuk login tidak terdaftar didalam database
-=======
-     * @return jobseeker menampilkan data jobseeker berdasarkan kedua parameter yang telah diinputkan (email dan password) jika email dan password tersebut ada didalam database
-     * @return null menampilkan data kosong jika email dan password yang diinputkan untuk login tidak terdaftar didalam database
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     public static Jobseeker getJobseekerLogin(String email, String password){
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {

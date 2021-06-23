@@ -55,12 +55,7 @@ public class RecruiterController {
      * @param description sebagai inputan data deskripsi wilayah
      * @param city sebagai inputan data kota
      *
-<<<<<<< HEAD
      * @return recruiter jadi menampilkan data recruiter yang berhasil ditambahkan, return null atau data kosong jika recruiter gagal ditambahkan ke database
-=======
-     * @return recruiter jadi menampilkan data recruiter yang berhasil ditambahkan
-     * @return null atau data kosong jika recruiter gagal ditambahkan ke database
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value="name") String name,

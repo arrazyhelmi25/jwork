@@ -22,11 +22,7 @@ public class FeeCalculator implements Runnable{
     }
 
     /**
-<<<<<<< HEAD
      * Method run, berfungsi untuk memulai proses kalkulasi total fee dari invoice, yang outputnya akan di print pada layar
-=======
-     * Method run, berfungsi untuk memulai proses kalkulasi total fee dari invoice
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      *
      */
     @Override

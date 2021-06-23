@@ -62,11 +62,7 @@ public class DatabaseJobseekerPostgre {
     /**
      * Method getter (accessor) yang bernama getLastJobseekerId, berfungsi untuk mendapatkan ID jobseeker terakhir dari database
      *
-<<<<<<< HEAD
      * @return value yang berisi id terakhir dari jobseeker
-=======
-     * return value yang berisi id terakhir dari jobseeker
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     public static int getLastJobseekerId() {
         int value = 0;

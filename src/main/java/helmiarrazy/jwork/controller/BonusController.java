@@ -47,12 +47,7 @@ public class BonusController {
      * @param minTotalFee sebagai inputan untuk data minimal total fee
      * @param active sebagai inputan untuk status aktif dari bonus
      *
-<<<<<<< HEAD
      * @return bonus jadi menampilkan data bonus yang berhasil ditambahkan, sedangkan return null atau data kosong jika bonus gagal ditambahkan ke database.
-=======
-     * @return bonus jadi menampilkan data bonus yang berhasil ditambahkan
-     * @return null atau data kosong jika bonus gagal ditambahkan ke database
->>>>>>> 80265ed36f47cefa04a71b0ba23b0aa19735365e
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(
